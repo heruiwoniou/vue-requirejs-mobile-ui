@@ -1,0 +1,50 @@
+.cs-button {
+    appearance: none;
+    border-radius: toRem(4);
+    border: 0;
+    box-sizing: border-box;
+    color: inherit;
+    display: block;
+    font-size: toRem(18);
+    height: toRem(90);
+    outline: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    &::after {
+        background-color: #000;
+        content: " ";
+        opacity: 0;
+        position: absolute 0 0 0 0;
+    }
+    &.default {
+        color: $_button-default-color;
+        background-color: $_button-default-background-color;
+        box-shadow: $_button-default-box-shadow;
+    }
+    &.primary {
+        color: $_button-primary-color;
+        background-color: $_button-primary-background-color;
+    }
+    &.danger {
+        color: $_button-danger-color;
+        background-color: $_button-danger-background-color;
+    }
+    &.large {
+        display: block;
+        width: 100%;
+    }
+    &.normal {
+        display: inline-block;
+        padding: 0 toRem(12);
+    }
+    &.small {
+        display: inline-block;
+        font-size: toRem(14);
+        padding: 0 toRem(12);
+        height: toRem(80);
+    }
+    &.disabled {
+        opacity: .6;
+    }
+}

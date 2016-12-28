@@ -1,0 +1,23 @@
+/*样式重置*/
+
+@import './core/reset';
+
+/*参数*/
+
+@import './var';
+
+/*字体*/
+
+@import './font/font-awesome';
+
+/*项目公用*/
+
+@import './frame';
+
+/*控件 样式*/
+
+@import './components/Page';
+@import './components/Header';
+@import './components/Contenter';
+@import './components/Footer';
+@import './components/Button';

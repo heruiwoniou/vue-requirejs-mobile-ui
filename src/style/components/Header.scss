@@ -1,0 +1,38 @@
+.cs-header {
+    height: toRem($_header_height);
+    line-height: toRem($_header_height);
+    text-align: center;
+    background: $baseColor;
+    display: flex;
+    padding: 0 10px;
+    h1 {
+        font-size: toRem(30);
+        color: white;
+        flex: 1;
+        @include txtHidden;
+    }
+    .cs-header-button {
+        flex: .5;
+        &.left {
+            text-align: left;
+        }
+        &.right {
+            text-align: right;
+        }
+        .cs-button {
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+            color: inherit;
+            display: inline-block;
+            vertical-align: top;
+            padding: 0;
+            font-size: inherit;
+            color: white;
+            height: toRem($_header_height);
+            &::after {
+                content: none;
+            }
+        }
+    }
+}

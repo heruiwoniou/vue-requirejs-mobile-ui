@@ -1,0 +1,33 @@
+$_scale_: 320 / 750;
+
+/* base color*/
+
+$baseColor: #26a2ff;
+
+/*cs-header and cs-footer*/
+
+$_header_height: 90;
+$_footer_height: 90;
+
+/* cs-button*/
+
+$_button_default_color: #656b79;
+$_button_default_background_color: #f6f8fa;
+$_button_default_plain_color: #5a5a5a;
+$_button_default_box_shadow: 0 0 1px #b8bbbf;
+$_button_primary_color: #fff;
+$_button_primary_background_color: $baseColor;
+$_button_danger_color: #fff;
+$_button_danger_background_color: #ef4f4f;
+
+/* function and mixin*/
+
+@function toRem($number) {
+    @return ( $number * $_scale_ / 12)+rem
+}
+
+@mixin txtHidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
