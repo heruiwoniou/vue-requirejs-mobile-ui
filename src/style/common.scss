@@ -10,10 +10,6 @@
 
 @import './font/font-awesome';
 
-/*项目公用*/
-
-@import './frame';
-
 /*控件 样式*/
 
 @import './components/Page';
@@ -21,3 +17,11 @@
 @import './components/Contenter';
 @import './components/Footer';
 @import './components/Button';
+
+/*切换动画*/
+
+@import './transition/index';
+
+/*项目公用*/
+
+@import './frame';

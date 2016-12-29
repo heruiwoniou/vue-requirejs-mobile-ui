@@ -1,11 +1,22 @@
-<cs-page>
-    <cs-contenter>
-        <div class="login-panel">
-            <div class="login-form">
-                <router-link to="/main">
-                    <cs-button type="primary" size="large">登陆</cs-button>
-                </router-link>
+<transition name="left-in-out">
+    <cs-page class="login">
+        <cs-contenter>
+            <div class="cs-contenter__loginPanel">
+                <div class="cs-contenter__loginPanel__container">
+                    <div class="cs-contenter__loginPanel__logo">
+                        <img src="/resource/system/logo.png" alt="">
+                    </div>
+                    <input type="text">
+                    <input type="password">
+                    <router-link to="/main">
+                        <cs-button type="primary" size="large">登陆</cs-button>
+                    </router-link>
+                </div>
             </div>
-        </div>
-    </cs-contenter>
-</cs-page>
+        </cs-contenter>
+        <cs-footer :height="190" transparent>
+            <a href="javascript:;" class="forget">忘记密码</a>
+            <p>Copyright©2005-2016 Tenpay</p>
+        </cs-footer>
+    </cs-page>
+</transition>

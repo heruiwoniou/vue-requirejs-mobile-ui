@@ -1,12 +1,14 @@
-<cs-page>
-    <cs-header title="测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题">
-        <router-link to="/" slot="left">
-            <cs-button icon="icon-angle-left">返回</cs-button>
-        </router-link>
-        <cs-button icon="icon-reorder" slot="right"></cs-button>
-    </cs-header>
-    <cs-contenter>
-        <cs-button size="large">标题</cs-button>
-    </cs-contenter>
-    <cs-footer></cs-footer>
-</cs-page>
+<transition name="right-in-out">
+    <cs-page class="main">
+        <cs-header title="测试标题测试标题测试标题测试标题测试标题测试标题测试标题测试标题">
+            <router-link to="/" slot="left">
+                <cs-button icon="icon-angle-left">返回</cs-button>
+            </router-link>
+            <cs-button icon="icon-reorder" slot="right"></cs-button>
+        </cs-header>
+        <cs-contenter>
+            <cs-button size="large" type="danger">更换图标</cs-button>
+        </cs-contenter>
+        <cs-footer></cs-footer>
+    </cs-page>
+</transition>

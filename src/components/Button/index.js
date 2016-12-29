@@ -1,5 +1,10 @@
 define(['require', 'component'].dispose('tpl'), function(require, component) {
     return component('cs-button', {
+        methods: {
+            clickHandle: function(evt) {
+                this.disabled ? undefined : this.$emit('click', evt);
+            }
+        },
         props: {
             icon: String,
             disabled: Boolean,

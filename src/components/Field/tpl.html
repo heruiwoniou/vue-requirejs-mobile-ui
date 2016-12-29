@@ -1,0 +1,4 @@
+<div class="cs-field">
+    <input :type="type" v-if="type!='textarea'" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" :class="['cs-filed--' + type]" />
+    <textarea v-else :rows="rows" :placeholder="placeholder" :disabled="disabled" :readonly="readonly"></textarea>
+</div>

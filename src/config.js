@@ -12,7 +12,8 @@ require.config({
         'component': 'components/component',
 
         'shim': 'common/shim',
-        'detector': 'common/detector'
+        'detector': 'common/detector',
+        'calc': 'common/calculate'
     },
     map: {
         '*': {
@@ -25,14 +26,14 @@ require.config({
         'vue',
         'vue-router',
         'detector',
+        'calc',
         'fastclick',
         'libs/require-text/text'
     ]
 });
 require(['fastclick', 'application'], function(FastClick, application) {
-    /**
-     * 页面基础尺寸设置
-     */
+
+    /*页面基础尺寸设置*/
     var docEl = document.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         recalc = (function recalc() {
@@ -45,7 +46,9 @@ require(['fastclick', 'application'], function(FastClick, application) {
     window.addEventListener(resizeEvt, recalc, false);
     document.addEventListener('DOMContentLoaded', recalc, false);
 
+    /*消除移动端click事件的延时*/
     new FastClick(document.body);
+
     /*应用程序 初始加载*/
     application.run();
 });
