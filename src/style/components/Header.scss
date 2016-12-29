@@ -2,7 +2,7 @@
     height: toRem($_header_height);
     line-height: toRem($_header_height);
     text-align: center;
-    background: $baseColor;
+    background: $_base_color;
     display: flex;
     padding: 0 10px;
     h1 {

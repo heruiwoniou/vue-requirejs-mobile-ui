@@ -1,0 +1,46 @@
+.cs-main {
+    .cs-contenter {
+        display: flex;
+        flex-direction: column;
+    }
+    .section-container {
+        padding: toRem(35);
+        h1 {
+            color: $_base_color;
+            font-size: toRem(36);
+            i {
+                margin-right: toRem(20);
+            }
+        }
+        &.content {
+            padding-top: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .user-panel {
+                flex: 1;
+                display: flex;
+                padding: toRem(20);
+                padding-bottom: toRem(40);
+                padding-top: 0;
+                .user-panel__admin,
+                .user-panel__teacher,
+                .user-panel__parent {
+                    flex: 1;
+                    background: green;
+                    border-radius: toRem(20);
+                    box-shadow: toRem(2) toRem(2) toRem(5) #ccc;
+                }
+                .user-panel__admin {
+                    background: #e1f6ff;
+                }
+                .user-panel__teacher {
+                    background: #daf7f4;
+                }
+                .user-panel__parent {
+                    background: #f7f4dd;
+                }
+            }
+        }
+    }
+}

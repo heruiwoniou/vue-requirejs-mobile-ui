@@ -1,0 +1,23 @@
+.cs-field {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &.cs-field--left input {
+        padding-right: toRem(35);
+    }
+    &.cs-field--right input {
+        padding-left: toRem(35);
+    }
+    i {
+        width: toRem(100);
+        text-align: center;
+        line-height: 1;
+    }
+    input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        align-self: stretch;
+    }
+}

@@ -1,7 +1,9 @@
-define(['require', 'component'].dispose('tpl'), function(require, component) {
+define(['require', '__component__'].dispose('tpl'), function(require, component) {
     var scroll;
     return component('cs-field', {
         props: {
+            leftIcon: String,
+            rightIcon: String,
             type: {
                 type: String,
                 default: 'text',

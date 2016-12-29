@@ -1,4 +1,4 @@
-define(['require', 'component', 'calc'].dispose('tpl'), function(require, component, calc) {
+define(['require', 'calc', '__component__'].dispose('tpl'), function(require, calc, component) {
     return component('cs-footer', {
         props: {
             transparent: Boolean,

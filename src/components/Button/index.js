@@ -1,4 +1,4 @@
-define(['require', 'component'].dispose('tpl'), function(require, component) {
+define(['require', '__component__'].dispose('tpl'), function(require, component) {
     return component('cs-button', {
         methods: {
             clickHandle: function(evt) {

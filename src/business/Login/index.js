@@ -4,13 +4,15 @@ define([
     'components/Contenter',
     'components/Footer',
     'components/Button',
-    'component'
-].dispose('cpt', 'tpl'), function(require, csPage, csContenter, csFooter, csButton, component) {
-    return component('cs-main', {
+    'components/Field',
+    '__module__'
+].dispose('cpt', 'tpl'), function(require, csPage, csContenter, csFooter, csButton, csField, module) {
+    return module('cs-login', {
         components: {
             csPage: csPage,
             csContenter: csContenter,
             csFooter: csFooter,
+            csField: csField,
             csButton: csButton
         }
     }, require)

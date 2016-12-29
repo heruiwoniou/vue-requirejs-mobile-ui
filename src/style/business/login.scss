@@ -1,4 +1,4 @@
-.login {
+.cs-login {
     background: #bfe196;
     .cs-contenter {
         position: relative;
@@ -27,14 +27,18 @@
                 height: toRem(85);
             }
         }
-        input,
+        .cs-field,
         .cs-button {
             margin: toRem(20) 0;
         }
-        input {
-            padding: toRem(35) toRem(35) toRem(35) toRem(105);
-            border: none;
-            display: block;
+        .cs-field {
+            border-radius: toRem(6);
+            height: toRem(95);
+            background: white;
+            i {
+                color: $_base_color;
+                font-size: toRem(40);
+            }
         }
     }
     .cs-footer {

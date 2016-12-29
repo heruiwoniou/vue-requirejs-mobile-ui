@@ -1,13 +1,13 @@
-<transition name="left-in-out">
-    <cs-page class="login">
+<transition :name="transitionName">
+    <cs-page class="cs-login">
         <cs-contenter>
             <div class="cs-contenter__loginPanel">
                 <div class="cs-contenter__loginPanel__container">
                     <div class="cs-contenter__loginPanel__logo">
                         <img src="/resource/system/logo.png" alt="">
                     </div>
-                    <input type="text">
-                    <input type="password">
+                    <cs-field type="text" left-icon="icon-user" placeholder="请输入帐号"></cs-field>
+                    <cs-field type="password" left-icon="icon-key" placeholder="请输入密码"></cs-field>
                     <router-link to="/main">
                         <cs-button type="primary" size="large">登陆</cs-button>
                     </router-link>

@@ -9,11 +9,14 @@ require.config({
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/lib/fastclick",
 
-        'component': 'components/component',
+        '__module__': 'common/__module__',
+        '__component__': 'common/__component__',
+
+        'detector': 'common/detector',
+        'calc': 'common/calculate',
+        'event-hub': 'common/event-hub',
 
         'shim': 'common/shim',
-        'detector': 'common/detector',
-        'calc': 'common/calculate'
     },
     map: {
         '*': {

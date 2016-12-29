@@ -5,9 +5,9 @@ define([
     'components/Contenter',
     'components/Footer',
     'components/Button',
-    'component'
-].dispose('cpt', 'tpl'), function(require, csPage, csHeader, csContenter, csFooter, csButton, component) {
-    return component('cs-main', {
+    '__module__'
+].dispose('cpt', 'tpl'), function(require, csPage, csHeader, csContenter, csFooter, csButton, module) {
+    return module('cs-main', {
         components: {
             csPage: csPage,
             csHeader: csHeader,

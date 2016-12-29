@@ -2,7 +2,7 @@ $_scale_: 320 / 750;
 
 /* base color*/
 
-$baseColor: #26a2ff;
+$_base_color: #26a2ff;
 
 /*cs-header and cs-footer*/
 
@@ -16,7 +16,7 @@ $_button_default_background_color: #f6f8fa;
 $_button_default_plain_color: #5a5a5a;
 $_button_default_box_shadow: 0 0 1px #b8bbbf;
 $_button_primary_color: #fff;
-$_button_primary_background_color: $baseColor;
+$_button_primary_background_color: $_base_color;
 $_button_danger_color: #fff;
 $_button_danger_background_color: #ef4f4f;
 

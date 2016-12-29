@@ -1,0 +1,20 @@
+.slide-right-enter-active {
+    transition: transform 2s ease-out;
+    z-index: 2;
+}
+
+.slide-right-leave-active {
+    transition: transform 2s ease-in;
+    z-index: 1;
+}
+
+.slide-right-leave-active,
+.slide-right-enter {
+    transform: translate3d(100%, 0, 0)
+}
+
+.slide-right-enter-active,
+.slide-right-leave,
+{
+    transform: translate3d(0, 0, 0)
+}
