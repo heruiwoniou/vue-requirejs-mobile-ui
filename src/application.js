@@ -1,17 +1,21 @@
-define(['vue', 'vue-router', 'business/Router', 'event-hub'].dispose('cpt'), function(Vue, VueRouter, Router, EventHub) {
+define([
+    'vue',
+    'vue-router',
+    'store/index',
+    'router/index',
+    'emitter',
+    'install'
+].dispose('component'), function(Vue, VueRouter, store, router, Emitter) {
     return {
         run: function() {
             Vue.config.silent = false;
             Vue.config.devtools = true;
-            new Vue({
+            Vue.mixin(Emitter);
+            $vm = new Vue({
                 el: 'body > div',
-                template: Router.tpl,
-                router: Router.router,
-                watch: {
-                    "$route": function(to, from) {
-                        EventHub.$emit('transition', to, from);
-                    }
-                }
+                store: store,
+                template: router.tpl,
+                router: router.router
             });
         }
     }

@@ -1,19 +1,19 @@
-.slide-left-enter-active {
+.slide-bottom-enter-active {
     transform: translate3d(0, 0, 0);
     transition: transform $_animate_time ease-out;
     z-index: 2;
 }
 
-.slide-left-enter {
-    transform: translate3d(-100%, 0, 0)
+.slide-bottom-enter {
+    transform: translate3d(0, 100%, 0)
 }
 
-.slide-left-leave-active {
+.slide-bottom-leave-active {
     transition: opacity $_animate_time ease-in;
     opacity: 0;
     z-index: 1;
 }
 
-.slide-left-leave {
+.slide-bottom-leave {
     opacity: 1;
 }

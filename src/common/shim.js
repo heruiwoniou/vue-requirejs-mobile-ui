@@ -5,7 +5,7 @@ define(function() {
     var map = _.map;
     var each = _.forEach;
     var dispose = {
-        cpt: function() {
+        component: function() {
             return map.call(this, function(module) {
                 return module.replace(componentURL, function(m) { return m + '/index' })
             })

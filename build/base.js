@@ -20,7 +20,7 @@ var fs = require('fs'),
         autoprefixer({
             browsers: [
                 'last 3 versions',
-                'ie >= 10',
+                'ie >= 8',
                 'ie_mob >= 10',
                 'ff >= 30',
                 'chrome >= 34',
@@ -98,8 +98,8 @@ module.exports = {
         return gulp.src(path.join(__dirname, '../', 'src/**/*.html'), ['libs/**/*.html'])
             .pipe(gulp.dest(path.join(__dirname, '../', 'dist')));
     },
-    resource() {
-        return gulp.src(path.join(__dirname, '../', 'src/resource/**/*.*'))
-            .pipe(gulp.dest(path.join(__dirname, '../', 'dist/resource')));
+    assets() {
+        return gulp.src(path.join(__dirname, '../', 'src/assets/**/*.*'))
+            .pipe(gulp.dest(path.join(__dirname, '../', 'dist/assets')));
     }
 }
