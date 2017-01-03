@@ -4,8 +4,8 @@ require.config({
     paths: {
         'libs': "libs",
         'vue': 'libs/vue/vue',
-        'vuex': 'libs/vuex/dist/vuex',
-        'vue-router': 'libs/vue-router/dist/vue-router',
+        'vuex': 'libs/vuex/vuex',
+        'vue-router': 'libs/vue-router/vue-router',
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/lib/fastclick",
         '__module__': 'common/__module__',
