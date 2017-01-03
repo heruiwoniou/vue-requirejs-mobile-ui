@@ -3,23 +3,17 @@ require.config({
     baseUrl: "./",
     paths: {
         'libs': "libs",
-
         'vue': 'libs/vue/vue',
-        'vuex': 'libs/vuex/dist/vuex',
-        'vue-router': 'libs/vue-router/dist/vue-router',
+        'vuex': 'libs/vuex/vuex',
+        'vue-router': 'libs/vue-router/vue-router',
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/lib/fastclick",
-
         '__module__': 'common/__module__',
         '__component__': 'common/__component__',
-
-
         'detector': 'common/detector',
         'calc': 'common/calculate',
         'emitter': 'common/mixins/emitter',
-
         'shim': 'common/shim',
-
         'install': 'components/install'
 
     },
@@ -40,9 +34,6 @@ require.config({
     ]
 });
 require(['fastclick', 'application'], function(FastClick, application) {
-
-    /*页面基础尺寸设置*/
-    var docEl = document.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         recalc = (function recalc() {
             var clientWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth;
