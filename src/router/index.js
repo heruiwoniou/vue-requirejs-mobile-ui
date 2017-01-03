@@ -3,7 +3,7 @@ define([
     'vue',
     'store/index',
     'vue-router'
-].concat(__config__.__get__modules__()).dispose('component', 'tpl'), function(require, Vue, store, VueRouter) {
+].concat(__config__.__get__strings__()).dispose('component', 'tpl'), function(require, Vue, store, VueRouter) {
     Vue.use(VueRouter);
 
     var routes = __config__.__set__modules__([].slice.call(arguments, 4));
@@ -12,6 +12,7 @@ define([
         mode: 'hash',
         routes: routes,
     })
+
     router.beforeEach(function(to, from, next) {
         const toDepth = to.path.split('/').length;
         const fromDepth = from.path.split('/').length;

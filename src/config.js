@@ -6,7 +6,7 @@ var __config__ = {
         { path: '/main/teacher', name: 'teacher' },
         { path: '/main/parent', name: 'parent' }
     ],
-    __get__modules__: function() {
+    __get__strings__: function() {
         var regex = /^[\w]/;
         return this.modules.map(function(o) { return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }); })
     },

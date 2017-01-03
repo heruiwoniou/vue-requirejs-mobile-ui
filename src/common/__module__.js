@@ -5,15 +5,8 @@ define(['vuex'], function(vuex) {
             computed: {
                 transitionName: function() {
                     var transition = this.$store.state[module].transitionName;
-                    console.log(module);
                     return transition;
                 }
-            },
-            methods: vuex.mapActions([
-                'transition'
-            ]),
-            destroyed: function() {
-                console.log('destroy', module);
             }
         }
         return Object.assign(cpt, {
