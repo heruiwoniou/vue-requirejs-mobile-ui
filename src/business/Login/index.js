@@ -1,6 +1,16 @@
 define([
     'require',
+    'components/Toast',
     '__module__'
-].dispose('tpl'), function(require, module) {
-    return module('cs-login', {}, require)
+].dispose('component', 'tpl'), function(require, Toast, module) {
+    return module('cs-login', {
+        methods: {
+            verify: function() {
+                Toast({
+                    message: '操作成功',
+                    iconClass: 'icon icon-success'
+                });
+            }
+        }
+    }, require)
 })

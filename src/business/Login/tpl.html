@@ -8,9 +8,9 @@
                     </div>
                     <cs-field type="text" left-icon="icon-user" placeholder="请输入帐号"></cs-field>
                     <cs-field type="password" left-icon="icon-key" placeholder="请输入密码"></cs-field>
-                    <router-link to="/main">
-                        <cs-button type="primary" size="large">登陆</cs-button>
-                    </router-link>
+                    <!--<router-link to="/main">-->
+                    <cs-button type="primary" size="large" @click.native="verify">登陆</cs-button>
+                    <!--</router-link>-->
                 </div>
             </div>
         </cs-contenter>

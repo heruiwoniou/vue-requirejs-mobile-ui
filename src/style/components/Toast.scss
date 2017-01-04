@@ -1,0 +1,40 @@
+.cs-toast {
+    position: fixed;
+    max-width: 80%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1000;
+    transition: opacity .3s linear;
+    .cs-toast-icon {
+        display: block;
+        text-align: center;
+        font-size: toRem(56);
+    }
+    .cs-toast-text {
+        font-size: toRem(14);
+        display: block;
+        text-align: center;
+    }
+    &.is-placetop {
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &.is-placemiddle {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &.is-placebottom {
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &.toast-pop-enter,
+    &.toast-pop-leave-active {
+        opacity: 0;
+    }
+}

@@ -4,7 +4,7 @@ define([
     'store/index',
     'router/index',
     'emitter',
-    'install'
+    '__install__'
 ].dispose('component'), function(Vue, VueRouter, store, router, Emitter) {
     return {
         run: function() {

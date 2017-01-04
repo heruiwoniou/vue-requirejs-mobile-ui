@@ -10,18 +10,19 @@ require.config({
         'fastclick': "libs/fastclick/lib/fastclick",
         '__module__': 'common/__module__',
         '__component__': 'common/__component__',
+        '__install__': 'common/__install__',
         'detector': 'common/detector',
         'calc': 'common/calculate',
         'emitter': 'common/mixins/emitter',
         'shim': 'common/shim',
         'install': 'components/install'
-      },
-      map: {
+    },
+    map: {
         '*': {
-          'text': 'libs/require-text/text'
+            'text': 'libs/require-text/text'
         }
-      },
-      deps: [
+    },
+    deps: [
         'shim',
         'jquery',
         'vue',
