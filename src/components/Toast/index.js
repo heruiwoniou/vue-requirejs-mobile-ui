@@ -68,35 +68,44 @@ define(['vue', 'text!./tpl.html'], function(Vue, tpl) {
     };
 
     ToastConstructor.prototype.close = function() {
-        this.visible = false;
-        this.$el.addEventListener('transitionend', removeDom);
-        this.closed = true;
-        returnAnInstance(this);
+        var that = this;
+        return new Promise(function(resolve, reject) {
+            that.visible = false;
+            that.$el.addEventListener('transitionend', function(event) {
+                removeDom(event);
+                resolve();
+            });
+            that.closed = true;
+            returnAnInstance(that);
+        })
+
     };
 
     var Toast = function(options) {
-        options = options || {};
-        var duration = options.duration || 3000;
+        return new Promise(function(resolve, reject) {
+            options = options || {};
+            var duration = options.duration || 2000;
 
-        var instance = getAnInstance();
-        instance.closed = false;
-        clearTimeout(instance.timer);
-        instance.message = typeof options === 'string' ? options : options.message;
-        instance.position = options.position || 'middle';
-        instance.className = options.className || '';
-        instance.iconClass = options.iconClass || '';
+            var instance = getAnInstance();
+            instance.closed = false;
+            clearTimeout(instance.timer);
+            instance.message = typeof options === 'string' ? options : options.message;
+            instance.position = options.position || 'middle';
+            instance.className = options.className || '';
+            instance.iconClass = options.iconClass || '';
 
-        document.body.appendChild(instance.$el);
-        Vue.nextTick(function() {
-            instance.visible = true;
-            instance.$el.removeEventListener('transitionend', removeDom);
-            ~duration && (instance.timer = setTimeout(function() {
-                if (instance.closed) return;
-                instance.close();
-            }, duration));
+            document.body.appendChild(instance.$el);
+            Vue.nextTick(function() {
+                instance.visible = true;
+                instance.$el.removeEventListener('transitionend', removeDom);
+                ~duration && (instance.timer = setTimeout(function() {
+                    if (instance.closed) return;
+                    instance.close().then(function() {
+                        resolve();
+                    })
+                }, duration));
+            });
         });
-
-        return instance;
     };
 
     return Toast

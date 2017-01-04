@@ -6,10 +6,13 @@ define([
     return module('cs-login', {
         methods: {
             verify: function() {
+                var that = this;
                 Toast({
                     message: '操作成功',
-                    iconClass: 'icon icon-success'
-                });
+                    iconClass: 'icon-ok'
+                }).then(function() {
+                    that.$router.push('/main');
+                })
             }
         }
     }, require)
