@@ -24,6 +24,7 @@ require.config({
     },
     deps: [
         'shim',
+        (window.Promise !== undefined ? '' : 'libs/es6-promise/promise'),
         'jquery',
         'vue',
         'vue-router',

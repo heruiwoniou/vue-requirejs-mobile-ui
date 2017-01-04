@@ -1,6 +1,7 @@
 var fs = require('fs'),
     path = require('path'),
     gulp = require('gulp'),
+    rename = require('gulp-rename'),
 
     postcss = require('gulp-postcss'),
     sass = require('gulp-sass'),
@@ -58,6 +59,7 @@ function script2dist(...files) {
         o => gulp.src(path.join(__dirname, '../', o.filename))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.init() : empty())
         .pipe(uglify())
+        .pipe(o.rename ? rename(o.rename) : empty())
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.write('.') : empty())
         .pipe(gulp.dest(path.join(__dirname, '../', o.dest)))
     );

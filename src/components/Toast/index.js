@@ -16,13 +16,13 @@ define(['vue', 'text!./tpl.html'], function(Vue, tpl) {
                 default: ''
             }
         },
-        data() {
+        data: function() {
             return {
                 visible: false
             };
         },
         computed: {
-            customClass() {
+            customClass: function() {
                 var classes = [];
                 switch (this.position) {
                     case 'top':
@@ -44,7 +44,7 @@ define(['vue', 'text!./tpl.html'], function(Vue, tpl) {
 
     var toastPool = [];
 
-    var getAnInstance = () => {
+    var getAnInstance = function() {
         if (toastPool.length > 0) {
             var instance = toastPool[0];
             toastPool.splice(0, 1);
@@ -55,13 +55,13 @@ define(['vue', 'text!./tpl.html'], function(Vue, tpl) {
         });
     };
 
-    var returnAnInstance = instance => {
+    var returnAnInstance = function(instance) {
         if (instance) {
             toastPool.push(instance);
         }
     };
 
-    var removeDom = event => {
+    var removeDom = function(event) {
         if (event.target.parentNode) {
             event.target.parentNode.removeChild(event.target);
         }
@@ -74,7 +74,8 @@ define(['vue', 'text!./tpl.html'], function(Vue, tpl) {
         returnAnInstance(this);
     };
 
-    var Toast = (options = {}) => {
+    var Toast = function(options) {
+        options = options || {};
         var duration = options.duration || 3000;
 
         var instance = getAnInstance();
