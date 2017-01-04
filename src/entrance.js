@@ -10,12 +10,12 @@ require.config({
         'fastclick': "libs/fastclick/lib/fastclick",
         '__module__': 'common/__module__',
         '__component__': 'common/__component__',
+        '__install__': 'common/__install__',
         'detector': 'common/detector',
         'calc': 'common/calculate',
         'emitter': 'common/mixins/emitter',
         'shim': 'common/shim',
         'install': 'components/install'
-
     },
     map: {
         '*': {
@@ -34,8 +34,8 @@ require.config({
     ]
 });
 require(['fastclick', 'application'], function(FastClick, application) {
-    var docEl = document.documentElement;
-    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         recalc = (function recalc() {
             var clientWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth;
             if (!clientWidth) return;
