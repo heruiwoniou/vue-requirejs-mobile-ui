@@ -10,11 +10,11 @@
 }
 
 .slide-right-leave-active {
-    transition: opacity $_animate_time ease-in;
-    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    transition: transform $_animate_time ease-out;
     z-index: 1;
 }
 
 .slide-right-leave {
-    opacity: 1;
+    transform: translate3d(0, 0, 0)
 }

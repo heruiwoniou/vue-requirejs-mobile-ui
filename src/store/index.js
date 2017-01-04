@@ -1,39 +1,19 @@
 define([
     'vue',
     'vuex',
-
-    'store/modules/login',
-    'store/modules/main',
-    'store/modules/admin',
-    'store/modules/parent',
-    'store/modules/teacher',
-], function(Vue, Vuex, login, main, admin, parent, teacher) {
+    './transition'
+].concat(__config__.map(function(o) { return 'store/modules/' + o.name; })), function(Vue, Vuex, transition) {
     Vue.use(Vuex);
-    var toUpperCase = function(str) {
-        return str.replace(/\//g, '_').toLocaleUpperCase();
-    }
+    var m = [].slice.call(arguments, 3);
+    var modules = {};
+    __config__.each(function(o, i) {
+        modules[o.name] = m[i];
+    });
     return new Vuex.Store({
         mutations: {},
         actions: {
-            transition: function(content, params) {
-                if (params.direction > 0) {
-                    content.dispatch(toUpperCase(params.to) + '_FROM_RIGHT');
-                    //content.dispatch(toUpperCase(params.from) + '_TO_LEFT');
-                } else if (params.direction < 0) {
-                    content.dispatch(toUpperCase(params.to) + '_FROM_LEFT');
-                    //content.dispatch(toUpperCase(params.from) + '_TO_RIGHT');
-                } else {
-                    content.dispatch(toUpperCase(params.to) + '_TO_FROM_BOTTOM');
-                    // content.dispatch(toUpperCase(params.from) + '_TO_FROM_BOTTOM');
-                }
-            }
+            transition: transition
         },
-        modules: {
-            login: login,
-            main: main,
-            admin: admin,
-            parent: parent,
-            teacher: teacher
-        }
+        modules: modules
     })
 })

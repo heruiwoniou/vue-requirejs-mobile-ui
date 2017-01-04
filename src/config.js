@@ -6,16 +6,12 @@ var __config__ = {
         { path: '/main/teacher', name: 'teacher' },
         { path: '/main/parent', name: 'parent' }
     ],
-    __get__strings__: function() {
-        var regex = /^[\w]/;
-        return this.modules.map(function(o) { return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }); })
+    map: function(dispose) {
+        return this.modules.map(dispose);
+
     },
-    __set__modules__: function(arr) {
-        return this.modules.map(function(o, i) {
-            var clone = Object.assign({}, o);
-            delete clone.name;
-            clone.component = arr[i];
-            return clone;
-        })
+    each: function(dispose) {
+        return this.modules.forEach(dispose);
+
     }
 }

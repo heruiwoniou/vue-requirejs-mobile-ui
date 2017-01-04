@@ -3,10 +3,18 @@ define([
     'vue',
     'store/index',
     'vue-router'
-].concat(__config__.__get__strings__()).dispose('component', 'tpl'), function(require, Vue, store, VueRouter) {
+].concat(__config__.map(
+    function(o) { return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }); }
+)).dispose('component', 'tpl'), function(require, Vue, store, VueRouter) {
     Vue.use(VueRouter);
 
-    var routes = __config__.__set__modules__([].slice.call(arguments, 4));
+    var m = [].slice.call(arguments, 4);
+    var routes = __config__.map(function(o, i) {
+        var clone = Object.assign({}, o);
+        delete clone.name;
+        clone.component = m[i];
+        return clone;
+    });
 
     var router = new VueRouter({
         mode: 'hash',
@@ -22,7 +30,10 @@ define([
             to: to.path,
             from: from.path
         });
-        next();
+        window.setTimeout(function() {
+            next();
+        })
+
     })
 
     return {
