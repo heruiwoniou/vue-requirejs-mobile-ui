@@ -1,5 +1,6 @@
-define(['require', '__component__'].dispose('tpl'), function(require, component) {
+define(['__component__', 'text!./tpl.html'], function(component, template) {
     return component('cs-button', {
+        template: template,
         methods: {
             clickHandle: function(evt) {
                 this.disabled ? undefined : this.$emit('click', evt);
@@ -31,5 +32,5 @@ define(['require', '__component__'].dispose('tpl'), function(require, component)
                 }
             }
         }
-    }, require)
+    })
 })

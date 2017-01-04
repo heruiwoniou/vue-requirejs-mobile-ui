@@ -1,3 +1,5 @@
-define(['require', '__component__'].dispose('tpl'), function(require, component) {
-    return component('cs-page', {}, require)
+define(['__component__', 'text!./tpl.html'], function(component, template) {
+    return component('cs-page', {
+        template: template,
+    })
 })

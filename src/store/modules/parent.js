@@ -1,6 +1,5 @@
-define([
-    './__factory__'
-], function(factory) {
-    var module = factory('/main/parent');
-    return module;
+define(function(factory) {
+    return function storeModule(module) {
+
+    }
 })

@@ -1,6 +1,6 @@
-define(['vue', 'text!./tpl.html'], function(Vue, tpl) {
+define(['vue', 'text!./tpl.html'], function(Vue, template) {
     var ToastConstructor = Vue.extend({
-        template: tpl,
+        template: template,
         props: {
             message: String,
             className: {

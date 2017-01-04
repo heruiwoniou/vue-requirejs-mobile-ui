@@ -1,5 +1,5 @@
 define(['vuex'], function(vuex) {
-    return function(name, cpt, require) {
+    return function(name, cpt) {
         var module = name.replace('cs-', '');
         var mixin = {
             computed: {
@@ -11,8 +11,7 @@ define(['vuex'], function(vuex) {
         }
         return Object.assign(cpt, {
             name: name,
-            mixins: [mixin],
-            template: require('text!./tpl.html')
+            mixins: [mixin]
         });
     }
 })

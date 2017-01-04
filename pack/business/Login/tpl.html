@@ -1,0 +1,22 @@
+<transition :name="transitionName">
+    <cs-page class="cs-login">
+        <cs-contenter>
+            <div class="cs-contenter__loginPanel">
+                <div class="cs-contenter__loginPanel__container">
+                    <div class="cs-contenter__loginPanel__logo">
+                        <img src="/assets/system/logo.png" alt="">
+                    </div>
+                    <cs-field type="text" left-icon="icon-user" placeholder="请输入帐号"></cs-field>
+                    <cs-field type="password" left-icon="icon-key" placeholder="请输入密码"></cs-field>
+                    <!--<router-link to="/main">-->
+                    <cs-button type="primary" size="large" @click.native="verify">登陆</cs-button>
+                    <!--</router-link>-->
+                </div>
+            </div>
+        </cs-contenter>
+        <cs-footer :height="190" transparent>
+            <a href="javascript:;" class="forget">忘记密码</a>
+            <p>Copyright©2005-2016 Tenpay</p>
+        </cs-footer>
+    </cs-page>
+</transition>

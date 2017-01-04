@@ -18,7 +18,7 @@ gulp.task('default', ['clean'],
         methods.server();
     })
 
-gulp.task('pack', ['clean'], function() {
-    process.env.NODE_ENV = 'product'
+gulp.task('pack', function() {
+    process.env.NODE_ENV = 'product';
     gulp.run('style', 'script', 'assets', 'html');
 })

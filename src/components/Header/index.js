@@ -1,7 +1,8 @@
-define(['require', '__component__'].dispose('tpl'), function(require, component) {
+define(['__component__', 'text!./tpl.html'], function(component, template) {
     return component('cs-header', {
+        template: template,
         props: {
             title: String
         }
-    }, require)
+    })
 })

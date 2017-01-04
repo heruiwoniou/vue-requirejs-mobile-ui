@@ -1,6 +1,7 @@
 define([
-    'require',
-    '__module__'
-].dispose('tpl'), function(require, module) {
-    return module('cs-admin', {}, require)
+    '__module__', 'text!./tpl.html'
+], function(module, template) {
+    return module('cs-admin', {
+        template: template
+    })
 })

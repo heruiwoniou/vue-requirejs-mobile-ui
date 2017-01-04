@@ -3,6 +3,9 @@ var fs = require('fs'),
     gulp = require('gulp'),
     rename = require('gulp-rename'),
 
+    rjs = require('gulp-requirejs'),
+    requirejsOptimize = require('gulp-requirejs-optimize'),
+
     postcss = require('gulp-postcss'),
     sass = require('gulp-sass'),
     autoprefixer = require('autoprefixer'),
@@ -70,8 +73,8 @@ module.exports = {
         sass2css({ filename: 'src/style/common.scss', dest: 'dist/style' })
     },
     script() {
-        script2dist({ filename: 'src/libs/requirejs/require.js', dest: 'dist/libs' })
-        gulp.src([path.join(__dirname, '../', 'src/**/*.js'), '!' + path.join(__dirname, '../', 'src/libs/requirejs/require.js')])
+        script2dist({ filename: 'src/libs/requirejs/require.js', dest: 'dist/libs' }, { filename: 'src/shim.js', dest: 'dist/libs' })
+        gulp.src([path.join(__dirname, '../', 'src/**/*.js'), '!' + path.join(__dirname, '../', 'src/libs/requirejs/require.js'), '!' + path.join(__dirname, '../', 'src/shim.js')])
             .pipe(gulp.dest(path.join(__dirname, '../', 'dist')))
     },
     server() {

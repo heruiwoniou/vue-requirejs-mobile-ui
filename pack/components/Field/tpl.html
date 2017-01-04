@@ -1,0 +1,10 @@
+<div class="cs-field" :class="{'cs-field--left' : leftIcon,'cs-field--right' : rightIcon}">
+    <slot name="left-icon">
+        <i v-if="leftIcon" :class="leftIcon"></i>
+    </slot>
+    <input :type="type" v-if="type!='textarea'" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" :class="['cs-filed--' + type]" />
+    <textarea v-else :rows="rows" :placeholder="placeholder" :disabled="disabled" :readonly="readonly"></textarea>
+    <slot name="right-icon">
+        <i v-if="rightIcon" :class="rightIcon"></i>
+    </slot>
+</div>

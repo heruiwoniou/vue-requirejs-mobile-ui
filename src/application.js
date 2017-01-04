@@ -5,7 +5,7 @@ define([
     'router/index',
     'emitter',
     '__install__'
-].dispose('component'), function(Vue, VueRouter, store, router, Emitter) {
+], function(Vue, VueRouter, store, router, Emitter) {
     return {
         run: function() {
             Vue.config.silent = false;

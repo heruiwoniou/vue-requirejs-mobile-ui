@@ -1,20 +1,20 @@
 require.config({
     //urlArgs: "bust=" + (new Date()).getTime(),
-    baseUrl: "./",
+    baseUrl: "/",
     paths: {
         'libs': "libs",
         'vue': 'libs/vue/vue',
         'vuex': 'libs/vuex/vuex',
         'vue-router': 'libs/vue-router/vue-router',
         'jquery': "libs/jquery/jquery",
-        'fastclick': "libs/fastclick/lib/fastclick",
+        'fastclick': "libs/fastclick/fastclick",
         '__module__': 'common/__module__',
         '__component__': 'common/__component__',
         '__install__': 'common/__install__',
+        '__store__factory__': 'common/__store__factory__',
         'detector': 'common/detector',
         'calc': 'common/calculate',
         'emitter': 'common/mixins/emitter',
-        'shim': 'common/shim',
         'install': 'components/install'
     },
     map: {
@@ -23,7 +23,6 @@ require.config({
         }
     },
     deps: [
-        'shim',
         (window.Promise !== undefined ? '' : 'libs/es6-promise/promise'),
         'jquery',
         'vue',

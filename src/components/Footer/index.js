@@ -1,5 +1,6 @@
-define(['require', 'calc', '__component__'].dispose('tpl'), function(require, calc, component) {
+define(['calc', '__component__', 'text!./tpl.html'], function(calc, component, template) {
     return component('cs-footer', {
+        template: template,
         props: {
             transparent: Boolean,
             height: {
@@ -15,5 +16,5 @@ define(['require', 'calc', '__component__'].dispose('tpl'), function(require, ca
                 return styleObject;
             }
         }
-    }, require)
+    })
 })

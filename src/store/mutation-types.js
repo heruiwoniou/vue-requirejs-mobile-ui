@@ -1,7 +1,0 @@
-define({
-    SLIDE_LEFT: 'SLIDE_LEFT',
-    SLIDE_RIGHT: 'SLIDE_RIGHT',
-    SLIDE_BOTTOM: 'SLIDE_BOTTOM',
-    SLIDE_TOP: 'SLIDE_TOP',
-    FADE: 'FADE',
-})

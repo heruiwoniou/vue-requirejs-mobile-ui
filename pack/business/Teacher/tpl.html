@@ -1,0 +1,12 @@
+<transition :name="transitionName">
+    <cs-page class="cs-teacher">
+        <cs-header title="教师">
+            <router-link to="/main" slot="left">
+                <cs-button icon="icon-angle-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            {{transitionName}}
+        </cs-contenter>
+    </cs-page>
+</transition>

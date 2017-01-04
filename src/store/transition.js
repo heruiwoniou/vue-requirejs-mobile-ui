@@ -20,7 +20,6 @@ define(function() {
                 content.dispatch(toUpperCase(params.to) + '_IN_BOTTOM');
                 content.dispatch(toUpperCase(params.from) + '_OUT_TOP');
             }
-
         }
     }
 })

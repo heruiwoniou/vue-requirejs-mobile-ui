@@ -1,15 +1,15 @@
 define([
     'vue',
 
-    'components/Toast',
+    'components/Toast/index',
 
-    'components/Page',
-    'components/Header',
-    'components/Contenter',
-    'components/Footer',
-    'components/Field',
-    'components/Button',
-].dispose('component'), function(Vue, Toast) {
+    'components/Page/index',
+    'components/Header/index',
+    'components/Contenter/index',
+    'components/Footer/index',
+    'components/Field/index',
+    'components/Button/index',
+], function(Vue, Toast) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;
     _.slice.call(arguments, 2).forEach(function(component) {

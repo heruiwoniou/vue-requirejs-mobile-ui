@@ -4,8 +4,8 @@ define([
     'store/index',
     'vue-router'
 ].concat(__config__.map(
-    function(o) { return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }); }
-)).dispose('component', 'tpl'), function(require, Vue, store, VueRouter) {
+    function(o) { return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }) + '/index'; }
+)), function(require, Vue, store, VueRouter) {
     Vue.use(VueRouter);
 
     var m = [].slice.call(arguments, 4);
@@ -37,7 +37,7 @@ define([
     })
 
     return {
-        tpl: require('text!./tpl.html'),
+        tpl: '<router-view></router-view>',
         router: router
     }
 })
