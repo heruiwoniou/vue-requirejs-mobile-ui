@@ -3,7 +3,6 @@ var fs = require('fs'),
     gulp = require('gulp'),
 
     postcss = require('gulp-postcss'),
-    less = require('gulp-less'),
     sass = require('gulp-sass'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
@@ -39,17 +38,6 @@ function sass2css(...files) {
         o => gulp.src(path.join(__dirname, '../', o.filename))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.init() : empty())
         .pipe(sass())
-        .pipe(postcss(processors))
-        .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.write('.') : empty())
-        .pipe(gulp.dest(o.dest))
-    )
-}
-
-function less2css(...files) {
-    files.forEach(
-        o => gulp.src(path.join(__dirname, '../', o.filename))
-        .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.init() : empty())
-        .pipe(less())
         .pipe(postcss(processors))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.write('.') : empty())
         .pipe(gulp.dest(o.dest))

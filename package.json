@@ -22,15 +22,10 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
-    "gulp-less": "^3.3.0",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-ss-server": "0.0.4",
-    "gulp-uglify": "^2.0.0",
-    "postcss-cssnext": "^2.9.0"
-  },
-  "dependencies": {
-    "seajs": "^3.0.2"
+    "gulp-uglify": "^2.0.0"
   }
 }

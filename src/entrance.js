@@ -15,14 +15,13 @@ require.config({
         'emitter': 'common/mixins/emitter',
         'shim': 'common/shim',
         'install': 'components/install'
-
-    },
-    map: {
+      },
+      map: {
         '*': {
-            'text': 'libs/require-text/text'
+          'text': 'libs/require-text/text'
         }
-    },
-    deps: [
+      },
+      deps: [
         'shim',
         'jquery',
         'vue',
@@ -34,6 +33,7 @@ require.config({
     ]
 });
 require(['fastclick', 'application'], function(FastClick, application) {
+    var docEl = document.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         recalc = (function recalc() {
             var clientWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth;
