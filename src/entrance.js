@@ -34,7 +34,8 @@ require.config({
     ]
 });
 require(['fastclick', 'application'], function(FastClick, application) {
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    var docEl = document.documentElement;
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         recalc = (function recalc() {
             var clientWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth;
             if (!clientWidth) return;
