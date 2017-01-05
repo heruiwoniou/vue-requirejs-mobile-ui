@@ -3,9 +3,6 @@ var fs = require('fs'),
     gulp = require('gulp'),
     rename = require('gulp-rename'),
 
-    rjs = require('gulp-requirejs'),
-    requirejsOptimize = require('gulp-requirejs-optimize'),
-
     postcss = require('gulp-postcss'),
     sass = require('gulp-sass'),
     autoprefixer = require('autoprefixer'),

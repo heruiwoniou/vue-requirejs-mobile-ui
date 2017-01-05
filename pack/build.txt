@@ -8,8 +8,6 @@ entrance.js
 libs/fastclick/fastclick.js
 libs/vue/vue.js
 libs/vue-router/vue-router.js
-store/index.js
-router/index.js
 common/mixins/emitter.js
 libs/require-text/text.js
 libs/require-text/text!components/Toast/tpl.html
