@@ -1,6 +1,0 @@
-<transition name="toast-pop">
-    <div class="cs-toast" v-show="visible" :class="customClass" :style="{ 'padding': iconClass === '' ? '10px' : '20px' }">
-        <i class="cs-toast-icon" :class="iconClass" v-if="iconClass !== ''"></i>
-        <span class="cs-toast-text" :style="{ 'padding-top': iconClass === '' ? '0' : '10px' }">{{ message }}</span>
-    </div>
-</transition>

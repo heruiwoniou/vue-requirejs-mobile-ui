@@ -1,8 +1,0 @@
-<button @click="clickHandle" class="cs-button" :class="[type, size, { 'disabled': disabled }]">
-    <span class="button-icon" v-if="icon || $slots.icon">
-      <slot name="icon">
-        <i v-if="icon" :class="icon"></i>
-      </slot>
-    </span>
-    <label class="button-text"><slot></slot></label>
-</button>

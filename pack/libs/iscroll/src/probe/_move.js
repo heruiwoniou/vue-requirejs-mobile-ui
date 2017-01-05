@@ -1,1 +1,0 @@
-timestamp-this.startTime>300&&(this.startTime=timestamp,this.startX=this.x,this.startY=this.y,1==this.options.probeType&&this._execEvent("scroll")),this.options.probeType>1&&this._execEvent("scroll");

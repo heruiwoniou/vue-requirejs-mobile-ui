@@ -14,7 +14,7 @@ var fs = require('fs'),
     sourcemaps = require('gulp-sourcemaps'),
     clean = require('gulp-clean'),
     server = require('gulp-ss-server'),
-    empty = require('./gulp-empty.js'),
+    empty = require('gulp-empty'),
 
     processors = [
         autoprefixer({

@@ -4,7 +4,7 @@ define([
     'store/index',
     'vue-router'
 ].concat(__config__.map(
-    function(o) { return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }) + '/index'; }
+    function(o) { return 'business/' + o.name.toUpperFirstCase() + '/index'; }
 )), function(require, Vue, store, VueRouter) {
     Vue.use(VueRouter);
 

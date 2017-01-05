@@ -1,17 +1,17 @@
 var fs = require('fs');
 var __config__ = require('./../dist/config');
 var base = {
-    appDir: '../dist',
+    appDir: '../' + (process.argv.length >= 3 ? process.argv[2] ? process.argv[2] : '' : 'dist'),
     baseUrl: "./",
-    dir: '../pack',
-    fileExclusionRegExp: "^(r|b)\.js|.*\.less$",
+    dir: '../' + (process.argv.length >= 4 ? process.argv[3] ? process.argv[3] : '' : 'pack'),
+    //fileExclusionRegExp: "^*\.less$",
     removeCombined: true,
     optimize: "uglify",
     uglify: {
         ascii_only: true,
         beautify: true
     },
-    optimizeCss: "none", //"standard",
+    optimizeCss: "standard", //"standard",
     paths: {
         'libs': "libs",
         'vue': 'libs/vue/vue',
@@ -57,24 +57,21 @@ base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
     return 'store/modules/' + o.name;
 }));
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
-    return 'business/' + o.name.replace(/^[\w]/, function(m) { return m.toLocaleUpperCase() }) + '/index';
+    return 'business/' + o.name.toUpperFirstCase() + '/index';
 }));
 fs.writeFileSync('build/b.js', '(' + JSON.stringify(base) + ')');
 
 var spawn = require('child_process').spawn;
 
-free = spawn('node', ['node_modules/requirejs/bin/r.js', '-o', 'build/b.js']);
+node2build = spawn('node', ['node_modules/requirejs/bin/r.js', '-o', 'build/b.js']);
 
-// 捕获标准输出并将其打印到控制台 
-free.stdout.on('data', function(data) {
-    console.log('standard output:\n' + data);
+node2build.stdout.on('data', function(data) {
+    console.log("" + data);
 });
-// 捕获标准错误输出并将其打印到控制台 
-free.stderr.on('data', function(data) {
-    console.log('standard error output:\n' + data);
+node2build.stderr.on('data', function(data) {
+    console.log("" + data);
 });
-// 注册子进程关闭事件 
-free.on('exit', function(code, signal) {
+node2build.on('exit', function(code, signal) {
     fs.unlinkSync('build/b.js');
-    console.log('child process eixt ,exit:' + code);
+    console.log(`打包完成 (返回码 : ${code})`);
 });
