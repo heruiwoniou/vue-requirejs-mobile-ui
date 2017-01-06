@@ -1,0 +1,20 @@
+<div class="cs-msgbox-wrapper">
+    <transition name="msgbox-bounce" v-on:after-leave="afterLeave">
+        <div class="cs-msgbox" v-show="value">
+            <div class="cs-msgbox-header" v-if="title !== ''">
+                <div class="cs-msgbox-title">{{ title }}</div>
+            </div>
+            <div class="cs-msgbox-content" v-if="message !== ''">
+                <div class="cs-msgbox-message" v-html="message"></div>
+                <div class="cs-msgbox-input" v-show="showInput">
+                    <input v-model="inputValue" :placeholder="inputPlaceholder" ref="input">
+                    <div class="cs-msgbox-errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
+                </div>
+            </div>
+            <div class="cs-msgbox-btns">
+                <button :class="[ cancelButtonClasses ]" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
+                <button :class="[ confirmButtonClasses ]" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
+            </div>
+        </div>
+    </transition>
+</div>

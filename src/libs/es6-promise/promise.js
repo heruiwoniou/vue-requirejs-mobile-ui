@@ -1,11 +1,3 @@
-/*!
- * @overview es6-promise - a tiny implementation of Promises/A+.
- * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
- * @license   Licensed under MIT license
- *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
- * @version   4.0.5
- */
-
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(function() { global.Promise = factory(); return global.Promise; }) :
@@ -1153,7 +1145,7 @@
     // Strange compat..
     Promise.polyfill = polyfill;
     Promise.Promise = Promise;
-
+    window.Promise = Promise;
     return Promise;
 
 })));

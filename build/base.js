@@ -2,11 +2,18 @@ var fs = require('fs'),
     path = require('path'),
     gulp = require('gulp'),
     rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
 
     postcss = require('gulp-postcss'),
-    sass = require('gulp-sass'),
+
+
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
+    position = require('postcss-position'),
+    clearfix = require('postcss-clearfix'),
+    size = require('postcss-size'),
+    bem = require('postcss-bem'),
+    nested = require('postcss-nested'),
 
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
@@ -17,6 +24,11 @@ var fs = require('fs'),
     empty = require('gulp-empty'),
 
     processors = [
+        bem,
+        nested,
+        position,
+        clearfix,
+        size,
         autoprefixer({
             browsers: [
                 'last 3 versions',
@@ -30,14 +42,14 @@ var fs = require('fs'),
                 'android >= 4.4',
                 'bb >= 10'
             ]
-        }),
-        cssnano
+        })
+        //cssnano
     ];
 
 function sass2css(...files) {
     files.forEach(
         o => gulp.src(path.join(__dirname, '../', o.filename))
-        .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.init() : empty())
+        .pipe(process.env.NODE_ENV == 'development' ? sourcemaps.init() : empty())
         .pipe(sass())
         .pipe(postcss(processors))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.write('.') : empty())
@@ -49,7 +61,9 @@ function script2concat(cName, dest, ...files) {
     gulp.src(files.map(o => path.join(__dirname, '../', o)))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.init() : empty())
         .pipe(concat(cName))
-        .pipe(uglify())
+        .pipe(uglify({
+            preserveComments: false
+        }))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.write('.') : empty())
         .pipe(gulp.dest(dest))
 }
@@ -58,7 +72,9 @@ function script2dist(...files) {
     files.forEach(
         o => gulp.src(path.join(__dirname, '../', o.filename))
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.init() : empty())
-        .pipe(uglify())
+        .pipe(uglify({
+            preserveComments: false
+        }))
         .pipe(o.rename ? rename(o.rename) : empty())
         .pipe(process.env.NODE_ENV === 'development' ? sourcemaps.write('.') : empty())
         .pipe(gulp.dest(path.join(__dirname, '../', o.dest)))

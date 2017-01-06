@@ -6,7 +6,10 @@
             </router-link>
         </cs-header>
         <cs-contenter>
-            {{transitionName}}
+            <br>
+            <div class="cs-button-group">
+                <cs-button size="large" type="default" @click.native="message">测试消息框</cs-button>
+            </div>
         </cs-contenter>
     </cs-page>
 </transition>

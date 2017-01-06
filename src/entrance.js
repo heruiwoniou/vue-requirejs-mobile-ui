@@ -6,6 +6,7 @@ require.config({
         'vue': 'libs/vue/vue',
         'vuex': 'libs/vuex/vuex',
         'vue-router': 'libs/vue-router/vue-router',
+        'vue-popup': 'libs/vue-popup/index',
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/fastclick",
         '__module__': 'common/__module__',
@@ -23,7 +24,7 @@ require.config({
         }
     },
     deps: [
-        (window.Promise !== undefined ? '' : 'libs/es6-promise/promise'),
+        'libs/es6-promise/promise',
         'jquery',
         'vue',
         'vue-router',

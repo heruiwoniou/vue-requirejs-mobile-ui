@@ -1,50 +1,83 @@
-.cs-button {
-    appearance: none;
-    border-radius: toRem(6);
-    border: 0;
-    box-sizing: border-box;
-    color: inherit;
-    display: block;
-    font-size: toRem(25);
-    height: toRem(90);
-    outline: 0;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    &::after {
+.cs-button{
+    &:after {
         background-color: #000;
         content: " ";
         opacity: 0;
         position: absolute 0 0 0 0;
     }
-    &.default {
-        color: $_button-default-color;
-        background-color: $_button-default-background-color;
-        box-shadow: $_button-default-box-shadow;
+    &:not(.is-disabled):active:after {
+        opacity: .4 !important;
     }
-    &.primary {
-        color: $_button-primary-color;
-        background-color: $_button-primary-background-color;
-    }
-    &.danger {
-        color: $_button-danger-color;
-        background-color: $_button-danger-background-color;
-    }
-    &.large {
+}
+@component-namespace cs {
+    @component button {
+        appearance: none;
+        border-radius: toRem(6);
+        border: 0;
+        box-sizing: border-box;
+        color: inherit;
         display: block;
-        width: 100%;
-    }
-    &.normal {
-        display: inline-block;
-        padding: 0 toRem(12);
-    }
-    &.small {
-        display: inline-block;
-        font-size: toRem(14);
-        padding: 0 toRem(12);
-        height: toRem(80);
-    }
-    &.disabled {
-        opacity: .6;
+        font-size: toRem(30);
+        height: toRem(90);
+        outline: 0;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        @descendent group {
+            &>* {
+                margin-bottom: toRem(20);
+            }
+        }
+        @descendent icon {
+            display: inline-block;
+        }
+        @modifier default {
+            color: $_button-default-color;
+            background-color: $_button-default-background-color;
+            box-shadow: $_button-default-box-shadow;
+            @when plain {
+                border: 1px solid $_button-default-color;
+                background-color: transparent;
+                box-shadow: none;
+                color: $_button-default-color;
+            }
+        }
+        @modifier primary {
+            color: $_button-primary-color;
+            background-color: $_button-primary-background-color;
+            @when plain {
+                border: 1px solid $_button-primary-background-color;
+                background-color: transparent;
+                box-shadow: none;
+                color: $_button-primary-background-color;
+            }
+        }
+        @modifier danger {
+            color: $_button-danger-color;
+            background-color: $_button-danger-background-color;
+            @when plain {
+                border: 1px solid $_button-danger-background-color;
+                background-color: transparent;
+                box-shadow: none;
+                color: $_button-danger-background-color;
+            }
+        }
+        @modifier large {
+            display: block;
+            width: 100%;
+        }
+        @modifier normal {
+            display: inline-block;
+            padding: 0 toRem(30);
+        }
+        @modifier small {
+            display: inline-block;
+            font-size: toRem(14);
+            padding: 0 toRem(30);
+            height: toRem(70);
+        }
+        @when disabled {
+            opacity: .6;
+        }
     }
 }

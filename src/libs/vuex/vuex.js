@@ -1,8 +1,3 @@
-/**
- * vuex v2.1.1
- * (c) 2016 Evan You
- * @license MIT
- */
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) :

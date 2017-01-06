@@ -15,7 +15,7 @@ gulp.task('default', ['clean'],
         gulp.watch([path.join(__dirname, 'src/**/*.scss'), path.join(__dirname, 'src/**/*.sass')], o => gulp.run('style'));
         gulp.watch(path.join(__dirname, 'src/**/*.js'), o => gulp.run('script'));
         gulp.watch(path.join(__dirname, 'src/**/*.html'), o => gulp.run('html'));
-        //methods.server();
+        methods.server();
     })
 
 gulp.task('pack', function() {

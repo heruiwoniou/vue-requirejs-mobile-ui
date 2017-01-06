@@ -2,6 +2,7 @@ define([
     'vue',
 
     'components/Toast/index',
+    'components/MessageBox/index',
 
     'components/Page/index',
     'components/Header/index',
@@ -9,10 +10,11 @@ define([
     'components/Footer/index',
     'components/Field/index',
     'components/Button/index',
-], function(Vue, Toast) {
+], function(Vue, Toast, MessageBox) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;
-    _.slice.call(arguments, 2).forEach(function(component) {
+    Vue.$messagebox = Vue.prototype.$messagebox = MessageBox;
+    _.slice.call(arguments, 3).forEach(function(component) {
         if (component.name) Vue.component(component.name, component);
     })
 })

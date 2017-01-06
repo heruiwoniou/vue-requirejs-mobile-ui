@@ -1,15 +1,26 @@
 var fs = require('fs');
+var cp = require('child_process');
 var __config__ = require('./../dist/config');
+var fromdir = (process.argv.length >= 3 ? process.argv[2] ? process.argv[2] : '' : 'dist');
+var todir = (process.argv.length >= 4 ? process.argv[3] ? process.argv[3] : '' : 'pack')
 var base = {
-    appDir: '../' + (process.argv.length >= 3 ? process.argv[2] ? process.argv[2] : '' : 'dist'),
+    appDir: '../' + fromdir,
     baseUrl: "./",
-    dir: '../' + (process.argv.length >= 4 ? process.argv[3] ? process.argv[3] : '' : 'pack'),
+    dir: '../' + todir,
     //fileExclusionRegExp: "^*\.less$",
     removeCombined: true,
-    optimize: "uglify",
+    optimize: "uglify2",
     uglify: {
         ascii_only: true,
-        beautify: true
+        beautify: true,
+        preserveComments: false
+    },
+    uglify2: {
+        output: {
+            ascii_only: true,
+            beautify: false,
+            comments: false
+        }
     },
     optimizeCss: "standard", //"standard",
     paths: {
@@ -59,19 +70,44 @@ base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
     return 'business/' + o.name.toUpperFirstCase() + '/index';
 }));
+
+base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
+    return 'libs/require-text/text!business/' + o.name.toUpperFirstCase() + '/tpl.html';
+}))
+
 fs.writeFileSync('build/b.js', '(' + JSON.stringify(base) + ')');
 
-var spawn = require('child_process').spawn;
+var spawn = cp.spawn;
+var exec = cp.exec;
 
 node2build = spawn('node', ['node_modules/requirejs/bin/r.js', '-o', 'build/b.js']);
 
 node2build.stdout.on('data', function(data) {
-    console.log("" + data);
+    //console.log("" + data);
 });
 node2build.stderr.on('data', function(data) {
     console.log("" + data);
 });
 node2build.on('exit', function(code, signal) {
     fs.unlinkSync('build/b.js');
+    //合并代码
+    var entrance = fs.readFileSync(todir + '/entrance.js', 'utf-8');
+    var router = fs.readFileSync(todir + '/router/index.js', 'utf-8');
+    router = router.replace(/(define\()(e,function)/, '$1\"router/index\",$2');
+    var store = fs.readFileSync(todir + '/store/index.js', 'utf-8');
+    store = store.replace(/(define\()(e,function)/, '$1\"store/index\",$2');
+    entrance = entrance.replace(/(define\("application")/, router + store + '$1');
+    var config = fs.readFileSync(todir + '/config.js', 'utf-8');
+    entrance = config + entrance;
+    exec('rm -rf ' + todir + '/store');
+    exec('rm -rf ' + todir + '/router');
+    exec('rm ' + todir + '/build.txt');
+    exec('rm ' + todir + '/config.js');
+    fs.writeFileSync(todir + '/entrance.js', entrance);
+
+    //处理html
+    var html = fs.readFileSync(todir + '/index.html', 'utf-8');
+    html = html.replace('\r\n<script src="config.js"></script>', "");
+    fs.writeFileSync(todir + '/index.html', html)
     console.log(`打包完成 (返回码 : ${code})`);
 });

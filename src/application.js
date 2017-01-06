@@ -6,6 +6,7 @@ define([
     'emitter',
     '__install__'
 ], function(Vue, VueRouter, store, router, Emitter) {
+    window.Vue = Vue;
     return {
         run: function() {
             Vue.config.silent = false;

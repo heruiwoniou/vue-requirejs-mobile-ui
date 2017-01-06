@@ -9,6 +9,8 @@ define(['__component__', 'text!./tpl.html'], function(component, template) {
         props: {
             icon: String,
             disabled: Boolean,
+            nativeType: String,
+            plain: Boolean,
             type: {
                 type: String,
                 default: 'default',

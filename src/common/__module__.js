@@ -1,6 +1,5 @@
 define(['vuex'], function(vuex) {
-    return function(name, cpt) {
-        var module = name.replace('cs-', '');
+    return function(module, cpt, template) {
         var mixin = {
             computed: {
                 transitionName: function() {
@@ -10,7 +9,8 @@ define(['vuex'], function(vuex) {
             }
         }
         return Object.assign(cpt, {
-            name: name,
+            name: 'cs-' + module,
+            template: template,
             mixins: [mixin]
         });
     }
