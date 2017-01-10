@@ -1,0 +1,9 @@
+<transition name="cs-indicator">
+    <div class="cs-indicator" v-show="visible">
+        <div class="cs-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
+            <spinner class="cs-indicator-spin" :type="convertedSpinnerType" :size="70"></spinner>
+            <span class="cs-indicator-text" v-show="text">{{ text }}</span>
+        </div>
+        <div class="cs-indicator-mask" @touchmove.stop.prevent></div>
+    </div>
+</transition>

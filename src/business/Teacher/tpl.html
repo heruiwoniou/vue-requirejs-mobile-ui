@@ -2,11 +2,14 @@
     <cs-page class="cs-teacher">
         <cs-header title="教师">
             <router-link to="/main" slot="left">
-                <cs-button icon="icon-angle-left">返回</cs-button>
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
             </router-link>
         </cs-header>
         <cs-contenter>
-            {{transitionName}}
+            <cs-cell title="标题文字"></cs-cell>
+            <cs-cell title="标题文字" value="说明文字"></cs-cell>
+            <cs-cell title="标题文字" to="//github.com" is-link value="带链接"></cs-cell>
+            <cs-cell title="标题文字" icon="icon-ellipsis-h" value="带 icon"></cs-cell>
         </cs-contenter>
     </cs-page>
 </transition>

@@ -4,7 +4,6 @@
         flex-direction: column;
     }
     .section-container {
-        padding: toRem(35);
         h1 {
             color: $_base_color;
             font-size: toRem(36);
@@ -27,6 +26,9 @@
                 .user-panel__teacher,
                 .user-panel__parent {
                     flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     background: green;
                     border-radius: toRem(20);
                     box-shadow: toRem(2) toRem(2) toRem(5) #ccc;

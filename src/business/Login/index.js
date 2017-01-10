@@ -6,7 +6,7 @@ define(['vue'], function(Vue) {
                     var that = this;
                     Vue.$toast({
                         message: '操作成功',
-                        iconClass: 'icon-ok'
+                        iconClass: 'fa fa-check'
                     });
                     window.setTimeout(function() {
                         that.$router.push('/main');

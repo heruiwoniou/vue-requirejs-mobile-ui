@@ -4,6 +4,14 @@ body {
     overflow: hidden;
     -webkit-overflow-scrolling: none;
 }
-
+.section-container{
+    padding: toRem(30);
+    &.tb{
+        padding: toRem(30) 0 toRem(30) 0;
+    }
+    &.lr{
+        padding: 0 toRem(30) 0 toRem(30);
+    }
+}
 @import './business/login';
 @import './business/main';

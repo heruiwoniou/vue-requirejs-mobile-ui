@@ -2,7 +2,18 @@ $_scale_: 320 / 750;
 
 /* base color*/
 
-$_base_color: #26a2ff;
+
+$color-blue: #26a2ff;
+$color-white: #fff;
+$color-grey: #d9d9d9;
+$border-color: #c8c8cd;
+$success-color: #4caf50;
+$error-color: #f44336;
+$warning-color: #ffc107;
+
+$cell-value-color: #888;
+
+$_base_color: $color-blue;
 
 /*cs-header and cs-footer*/
 

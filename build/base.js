@@ -24,9 +24,9 @@ var fs = require('fs'),
     empty = require('gulp-empty'),
 
     processors = [
+        position,
         bem,
         nested,
-        position,
         clearfix,
         size,
         autoprefixer({
