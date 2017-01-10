@@ -27,7 +27,7 @@ define([
     return component('cs-spinner', {
         template: template,
         computed: {
-            spinner() {
+            spinner: function() {
                 return "cs-" + parseSpinner(this.type);
             }
         },

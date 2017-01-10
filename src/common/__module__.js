@@ -9,7 +9,7 @@ define(['vuex'], function(vuex) {
             }
         }
         return Object.assign(cpt, {
-            name: 'cs-' + module,
+            name: 'bus-' + module,
             template: template,
             mixins: [mixin]
         });

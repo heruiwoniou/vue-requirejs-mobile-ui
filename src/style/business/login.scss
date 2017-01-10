@@ -2,18 +2,15 @@
     background: #bfe196;
     .cs-contenter {
         position: relative;
+        display: flex;
+        justify-content: center;
         .cs-contenter__loginPanel {
-            position: absolute;
             width: 80%;
-            height: toRem(790);
-            display: inline-block;
-            vertical-align: middle;
-            top: 50%;
-            margin-top: toRem(-395);
-            margin-left: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .cs-contenter__loginPanel__container {
-            height: 100%;
             width: 100%;
             display: flex;
             flex-direction: column;

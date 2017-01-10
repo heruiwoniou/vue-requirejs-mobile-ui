@@ -124,20 +124,20 @@ q:after {
     content: "";
     content: none;
 }
-
-a {
-    color: #06f;
-    text-decoration: none;
-    cursor: pointer;
-    &:link,
-    &:visited,
-    &:active {
-        color: #06f;
-    }
-    &:hover,
-    &:focus {
-        color: #f60;
-        text-decoration: underline;
-        outline: none;
-    }
-}
+a{ text-decoration: none;}
+// a {
+//     color: #06f
+//     text-decoration: none;
+//     cursor: pointer;
+//     &:link,
+//     &:visited,
+//     &:active {
+//         color: #06f;
+//     }
+//     &:hover,
+//     &:focus {
+//         color: #f60;
+//         text-decoration: underline;
+//         outline: none;
+//     }
+// }

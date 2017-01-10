@@ -7,11 +7,9 @@ define(['vue', 'components/Spinner/index', '__component__', 'text!./tpl.html'], 
                 visible: false
             };
         },
-
         components: {
-            Spinner
+            Spinner: Spinner
         },
-
         computed: {
             convertedSpinnerType: function() {
                 switch (this.spinnerType) {

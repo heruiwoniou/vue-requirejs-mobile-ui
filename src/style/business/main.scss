@@ -4,13 +4,6 @@
         flex-direction: column;
     }
     .section-container {
-        h1 {
-            color: $_base_color;
-            font-size: toRem(36);
-            i {
-                margin-right: toRem(20);
-            }
-        }
         &.content {
             padding-top: 0;
             flex: 1;

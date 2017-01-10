@@ -1,0 +1,15 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin">
+        <cs-header title="JSComponents">
+            <router-link to="/Main" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <h1><i class="fa fa-cube"></i>JSComponents</h1>
+            </div>
+            <cs-cell title="Toast" to="/Main/JSComponents/Toast" is-link></cs-cell>
+        </cs-contenter>
+    </cs-page>
+</transition>

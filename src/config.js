@@ -1,14 +1,16 @@
+;
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         (global.__config__ = factory());
 })(this, function() {
     var __config__ = {
         modules: [
-            { path: '/', name: 'login' },
-            { path: '/main', name: 'main' },
-            { path: '/main/admin', name: 'admin' },
-            { path: '/main/teacher', name: 'teacher' },
-            { path: '/main/parent', name: 'parent' }
+            { path: '/', name: 'Login' },
+            { path: '/Main', name: 'Main' },
+            { path: '/Main/JSComponents', name: 'JSComponents' },
+            { path: '/Main/JSComponents/Toast', name: 'JSComponents/Toast' },
+            { path: '/Main/CSSComponents', name: 'CSSComponents' },
+            { path: '/Main/FormComponents', name: 'FormComponents' }
         ],
         map: function(dispose) {
             return this.modules.map(dispose);

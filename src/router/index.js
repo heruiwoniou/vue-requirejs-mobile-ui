@@ -4,7 +4,7 @@
         'store/index',
         'vue-router'
     ].concat(__config__.map(function(o) {
-        var func = ";define('business/base/" + o.name + "',['__module__','business/" + o.name.toUpperFirstCase() + "/index','text!business/" + o.name.toUpperFirstCase() + "/tpl.html'],function(factory,businessModule,template){ return factory('" + o.name + "', businessModule('" + o.name + "'),template)})"
+        var func = ";define('business/base/" + o.name + "',['__module__','business/" + o.name + "/index','text!business/" + o.name + "/tpl.html'],function(factory,businessModule,template){ return factory('" + o.name + "', businessModule('" + o.name + "'),template)})"
         __config__.dynamic(func);
         return 'business/base/' + o.name;
     }));

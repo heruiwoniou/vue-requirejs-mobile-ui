@@ -28,6 +28,7 @@ var base = {
         'vue': 'libs/vue/vue',
         'vuex': 'libs/vuex/vuex',
         'vue-router': 'libs/vue-router/vue-router',
+        'vue-popup': 'libs/vue-popup/index',
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/fastclick",
         '__module__': 'common/__module__',
@@ -36,7 +37,8 @@ var base = {
         '__store__factory__': 'common/__store__factory__',
         'detector': 'common/detector',
         'calc': 'common/calculate',
-        'emitter': 'common/mixins/emitter'
+        'emitter': 'common/mixins/emitter',
+        'install': 'components/install'
     },
     map: {
         '*': {
@@ -68,11 +70,11 @@ base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
     return 'store/modules/' + o.name;
 }));
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
-    return 'business/' + o.name.toUpperFirstCase() + '/index';
+    return 'business/' + o.name + '/index';
 }));
 
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
-    return 'libs/require-text/text!business/' + o.name.toUpperFirstCase() + '/tpl.html';
+    return 'libs/require-text/text!business/' + o.name + '/tpl.html';
 }))
 
 fs.writeFileSync('build/b.js', '(' + JSON.stringify(base) + ')');
@@ -83,7 +85,7 @@ var exec = cp.exec;
 node2build = spawn('node', ['node_modules/requirejs/bin/r.js', '-o', 'build/b.js']);
 
 node2build.stdout.on('data', function(data) {
-    //console.log("" + data);
+    console.log("" + data);
 });
 node2build.stderr.on('data', function(data) {
     console.log("" + data);
