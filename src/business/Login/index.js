@@ -8,10 +8,7 @@ define(['vue'], function(Vue) {
                         message: '操作成功',
                         iconClass: 'fa fa-check'
                     });
-                    window.setTimeout(function() {
-                        that.$router.push('/main');
-                    }, 2000);
-
+                    that.$router.push('/Main');
                 }
             }
         }

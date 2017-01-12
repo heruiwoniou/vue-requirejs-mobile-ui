@@ -1,9 +1,9 @@
 .v-modal-enter {
-  animation: v-modal-in .2s ease;
+  animation: v-modal-in .3s ease;
 }
 
 .v-modal-leave {
-  animation: v-modal-out .2s ease forwards;
+  animation: v-modal-out .3s ease forwards;
 }
 
 @keyframes v-modal-in {

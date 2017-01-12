@@ -7,29 +7,29 @@
       background-color: #fff;
       width: 65%;
       border-radius: toRem(10);
-      font-size: toRem(16*2);
+      font-size: toRem(16*1.8);
       -webkit-user-select: none;
       overflow: hidden;
       backface-visibility: hidden;
       transition: .2s;
       
       @descendent header {
-        padding: toRem(15*2) 0 0;
+        padding: toRem(15*1.8) 0 0;
       }
       
       @descendent content {
-        padding: toRem(10*2) toRem(20*2) toRem(15*2);
-        border-bottom: toRem(1*2) solid #ddd;
-        min-height: toRem(36*2);
+        padding: toRem(10*1.8) toRem(20*1.8) toRem(15*1.8);
+        border-bottom: toRem(1*1.8) solid #ddd;
+        min-height: toRem(36*1.8);
         position: relative;
       }
       
       @descendent input {
-        padding-top: toRem(15*2);
+        padding-top: toRem(15*1.8);
         & input {
-          border: toRem(1*2) solid #dedede;
-          border-radius: toRem(5*2);
-          padding: toRem(4*2) toRem(5*2);
+          border: toRem(1*1.8) solid #dedede;
+          border-radius: toRem(5*1.8);
+          padding: toRem(4*1.8) toRem(5*1.8);
           width: 100%;
           appearance: none;
           outline: none;
@@ -44,16 +44,16 @@
     
       @descendent errormsg {
         color: red;
-        font-size: toRem(12*2);
-        min-height: toRem(18*2);
-        margin-top: toRem(2*2);
+        font-size: toRem(12*1.8);
+        min-height: toRem(18*1.8);
+        margin-top: toRem(2*1.8);
       }
       
       @descendent title {
         text-align: center;
         padding-left: 0;
         margin-bottom: 0;
-        font-size: toRem(16*2);
+        font-size: toRem(16*1.8);
         font-weight: bold;
         color: #333;
       }
@@ -62,7 +62,7 @@
         color: #999;
         margin: 0;
         text-align: center;
-        line-height: toRem(36*2);
+        line-height: toRem(36*1.8);
       }
       
       @descendent btns {
@@ -70,13 +70,13 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        height: toRem(40*2);
-        line-height: toRem(40*2);
+        height: toRem(40*1.8);
+        line-height: toRem(40*1.8);
       }
     
       @descendent btn {
         font-size: toRem(30);
-        line-height: toRem(35*2);
+        line-height: toRem(35*1.8);
         display: block;
         background-color: #fff;
         flex: 1;
@@ -94,7 +94,7 @@
     
       @descendent cancel {
         width: 50%;
-        border-right: toRem(1*2) solid #ddd;
+        border-right: toRem(1*1.8) solid #ddd;
         &:active {
           color: #26a2ff;
         }

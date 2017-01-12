@@ -4,13 +4,23 @@
         (global.__config__ = factory());
 })(this, function() {
     var __config__ = {
+        //规则说明
+        /**
+         * route : 路由名称
+         * name : 模块名称
+         * *path: 模块路径
+         */
         modules: [
-            { path: '/', name: 'Login' },
-            { path: '/Main', name: 'Main' },
-            { path: '/Main/JSComponents', name: 'JSComponents' },
-            { path: '/Main/JSComponents/Toast', name: 'JSComponents/Toast' },
-            { path: '/Main/CSSComponents', name: 'CSSComponents' },
-            { path: '/Main/FormComponents', name: 'FormComponents' }
+            { route: '/', name: 'Login', path: 'Login' },
+            { route: '/Main', name: 'Main', path: 'Main' },
+            { route: '/Main/JSComponents', name: 'JSComponents', path: 'JSComponents' },
+            { route: '/Main/JSComponents/Toast', name: 'JSComponents_Toast', path: 'JSComponents/Toast' },
+            { route: '/Main/JSComponents/Indicator', name: 'JSComponents_Indicator', path: 'JSComponents/Indicator' },
+            { route: '/Main/JSComponents/MessageBox', name: 'JSComponents_MessageBox', path: 'JSComponents/MessageBox' },
+            { route: '/Main/JSComponents/ActionSheet', name: 'JSComponents_ActionSheet', path: 'JSComponents/ActionSheet' },
+            { route: '/Main/JSComponents/Picker', name: 'JSComponents_Picker', path: 'JSComponents/Picker' },
+            { route: '/Main/CSSComponents', name: 'CSSComponents', path: 'CSSComponents' },
+            { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' }
         ],
         map: function(dispose) {
             return this.modules.map(dispose);

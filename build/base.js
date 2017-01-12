@@ -31,10 +31,10 @@ var fs = require('fs'),
         size,
         autoprefixer({
             browsers: [
-                'last 3 versions',
+                'last 2 versions',
                 'ie >= 8',
                 'ie_mob >= 10',
-                'ff >= 30',
+                'ff >= 20',
                 'chrome >= 34',
                 'safari >= 6',
                 'opera >= 12.1',

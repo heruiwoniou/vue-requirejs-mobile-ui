@@ -1,6 +1,6 @@
 .cs-cell{
     &:first-child {
-        .mint-cell-wrapper {
+        .cs-cell-wrapper {
             background-origin: border-box;
         }
     }
@@ -29,11 +29,16 @@
       background-color: $color-white;
       box-sizing: border-box;
       color: inherit;
-      min-height: 48px;
+      min-height: toRem(48*1.8);
       display: block;
       overflow: hidden;
       position: relative;
       text-decoration: none;
+
+      @descendent group{
+        margin-top:toRem(80);
+        margin-bottom:toRem(80);
+      }
 
       @descendent wrapper {
         background-image:linear-gradient(180deg, $color-grey, $color-grey 50%, transparent 50%);
@@ -44,25 +49,12 @@
         align-items: center;
         box-sizing: border-box;
         display: flex;
-        font-size: 16px;
+        font-size: toRem(16*1.8);
         line-height: 1;
         min-height: inherit;
         overflow: hidden;
         padding: 0 10px;
         width: 100%;
-      }
-
-      @descendent mask {
-        &::after {
-          background-color: #000;
-          content: " ";
-          opacity: 0;
-          position: absolute 0;
-        }
-
-        &:active::after {
-          opacity: .1;
-        }
       }
 
       @descendent text {
@@ -72,8 +64,8 @@
       @descendent label {
         color: #888;
         display: block;
-        font-size: 12px;
-        margin-top: 6px;
+        font-size: toRem(12*1.8);
+        margin-top: toRem(6*1.8);
       }
 
       img {
@@ -82,6 +74,9 @@
 
       @descendent title {
         flex: 1;
+        &>i{
+          vertical-align: middle;
+        }
       }
 
       @descendent value {
@@ -90,7 +85,7 @@
         align-items: center;
 
         @when link {
-          margin-right: 24px;
+          margin-right: toRem(24*1.8);
         }
       }
 
@@ -110,14 +105,14 @@
       }
 
       @descendent allow-right::after {
-        border: solid 2px $border-color;
+        border: solid toRem(2*1.8) $border-color;
         border-bottom-width: 0;
         border-left-width: 0;
         content: " ";
         position: absolute;
         top: 50%;
-        right: 20px;
-        size: 5px;
+        right: toRem(20*1.8);
+        size: toRem(5*1.8);
         transform: translateY(-50%) rotate(45deg);
       }
     }

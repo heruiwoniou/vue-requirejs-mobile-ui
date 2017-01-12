@@ -10,6 +10,7 @@ require.config({
         'vue-popup': 'libs/vue-popup/index',
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/fastclick",
+        'wind-dom': 'libs/wind-dom/index',
         '__module__': 'common/__module__',
         '__component__': 'common/__component__',
         '__install__': 'common/__install__',
@@ -32,7 +33,8 @@ require.config({
         'detector',
         'calc',
         'fastclick',
-        'libs/require-text/text'
+        'libs/require-text/text',
+        'libs/raf/index'
     ]
 });
 require(['fastclick', 'application'], function(FastClick, application) {
@@ -49,7 +51,7 @@ require(['fastclick', 'application'], function(FastClick, application) {
     document.addEventListener('DOMContentLoaded', recalc, false);
 
     /*消除移动端click事件的延时*/
-    new FastClick(document.body);
+    FastClick.attach(document.body);
 
     /*应用程序 初始加载*/
     application.run();

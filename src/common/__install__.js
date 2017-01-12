@@ -11,7 +11,10 @@ define([
     'components/Footer/index',
     'components/Field/index',
     'components/Button/index',
-    'components/Cell/index'
+    'components/Cell/index',
+    'components/CellSwipe/index',
+    'components/ActionSheet/index',
+    'components/Picker/index'
 ], function(Vue, Toast, MessageBox, Indicator) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;

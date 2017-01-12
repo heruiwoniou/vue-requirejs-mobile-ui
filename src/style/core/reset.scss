@@ -55,7 +55,8 @@ select,
 input,
 textarea,
 button {
-    vertical-align: middle
+    vertical-align: middle;
+    outline: none;
 }
 
 input,
@@ -124,7 +125,7 @@ q:after {
     content: "";
     content: none;
 }
-a{ text-decoration: none;}
+a{ text-decoration: none; outline: none;}
 // a {
 //     color: #06f
 //     text-decoration: none;

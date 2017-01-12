@@ -1,8 +1,8 @@
 <transition :name="transitionName">
-    <cs-page class="cs-teacher">
+    <cs-page class="cs-teacher" :class="{ 'top-layer':topLayer }">
         <cs-header title="FormComponents">
             <router-link to="/Main" slot="left">
-                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
             </router-link>
         </cs-header>
         <cs-contenter>
@@ -12,7 +12,7 @@
             <cs-cell title="标题文字"></cs-cell>
             <cs-cell title="标题文字" value="说明文字"></cs-cell>
             <cs-cell title="标题文字" to="//www.baidu.com" is-link value="带链接"></cs-cell>
-            <cs-cell title="标题文字" icon="fa fa-ellipsis-h" value="带 icon"></cs-cell>
+            <cs-cell title="标题文字" icon="fa fa-tasks" value="带 icon"></cs-cell>
             <cs-cell title="标题文字"><span>icon 是图片</span><img slot="icon" src="../assets/100x100.png" width="24" height="24"></cs-cell>
             <cs-cell title="标题文字" is-link>
                 <span style="color: green">这里是元素</span>

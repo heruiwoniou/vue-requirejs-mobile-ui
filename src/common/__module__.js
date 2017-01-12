@@ -5,6 +5,9 @@ define(['vuex'], function(vuex) {
                 transitionName: function() {
                     var transition = this.$store.state[module].transitionName;
                     return transition;
+                },
+                topLayer: function() {
+                    return this.$store.state[module].topLayer
                 }
             }
         }

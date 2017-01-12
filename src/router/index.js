@@ -4,9 +4,10 @@
         'store/index',
         'vue-router'
     ].concat(__config__.map(function(o) {
-        var func = ";define('business/base/" + o.name + "',['__module__','business/" + o.name + "/index','text!business/" + o.name + "/tpl.html'],function(factory,businessModule,template){ return factory('" + o.name + "', businessModule('" + o.name + "'),template)})"
+        var module = o.route.replace(/\//g, '_');
+        var func = ";define('business/base/" + module + "',['__module__','business/" + o.path + "/index','text!business/" + o.path + "/tpl.html'],function(factory,businessModule,template){ return factory('" + module + "', businessModule('" + module + "'),template)})"
         __config__.dynamic(func);
-        return 'business/base/' + o.name;
+        return 'business/base/' + module;
     }));
     define(businessModules, function(Vue, store, VueRouter) {
         Vue.use(VueRouter);
@@ -14,6 +15,8 @@
         var routes = __config__.map(function(o, i) {
             var clone = Object.assign({}, o);
             delete clone.name;
+            clone.path = clone.route;
+            delete clone.route;
             clone.component = m[i];
             return clone;
         });

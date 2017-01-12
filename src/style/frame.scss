@@ -6,6 +6,18 @@ body {
 }
 .section-container{
     padding: toRem(30);
+    &.rbl{
+        padding: 0 toRem(30) toRem(30) toRem(30);
+    }
+    &.tbl{
+        padding: toRem(30) 0 toRem(30) toRem(30);
+    }
+    &.trl{
+        padding: toRem(30) toRem(30) 0 toRem(30);
+    }
+    &.trb{
+        padding: toRem(30) toRem(30) toRem(30) 0;
+    }
     &.tb{
         padding: toRem(30) 0 toRem(30) 0;
     }

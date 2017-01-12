@@ -166,7 +166,7 @@ define(['vue', 'vue-popup', 'text!./tpl.html'], function(Vue, Popup, template) {
         type: '',
         showInput: false,
         showClose: true,
-        modalFade: false,
+        modalFade: true,
         lockScroll: false,
         closeOnClickModal: true,
         inputValue: null,

@@ -1,7 +1,6 @@
 .slide-bottom-enter-active {
     transform: translate3d(0, 0, 0);
     transition: transform $_animate_time ease-out;
-    z-index: 2;
 }
 
 .slide-bottom-enter {
@@ -9,9 +8,8 @@
 }
 
 .slide-bottom-leave-active {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 50%, 0);
     transition: transform $_animate_time ease-out;
-    z-index: 1;
 }
 
 .slide-bottom-leave {

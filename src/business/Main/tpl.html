@@ -1,5 +1,5 @@
 <transition :name="transitionName">
-    <cs-page class="cs-main">
+    <cs-page class="cs-main" :class="{ 'top-layer':topLayer }">
         <cs-header title="Components Classify">
             <router-link to="/" slot="right">
                 <cs-button icon="fa fa-sign-out"></cs-button>

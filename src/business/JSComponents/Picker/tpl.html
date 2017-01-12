@@ -1,0 +1,17 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Toast">
+            <router-link to="/Main/JSComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container trl">
+                <h1><i class="fa fa-puzzle-piece"></i>Picker</h1>
+            </div>
+            <div class="section-container">
+                <cs-picker :slots="slots" @change="onValuesChange" :visibleItemCount=3></cs-picker>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

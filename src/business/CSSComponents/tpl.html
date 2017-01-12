@@ -1,8 +1,8 @@
 <transition :name="transitionName">
-    <cs-page class="cs-parent">
+    <cs-page class="cs-parent" :class="{ 'top-layer':topLayer }">
         <cs-header title="CSSComponents">
             <router-link to="/Main" slot="left">
-                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
             </router-link>
         </cs-header>
         <cs-contenter>

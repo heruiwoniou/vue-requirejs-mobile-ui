@@ -1,0 +1,40 @@
+.cs-actionsheet-listitem,.cs-actionsheet-button{
+    display: block;
+    width: 100%;
+    height: toRem(45*1.8);
+    line-height: toRem(45*1.8);
+    font-size: toRem(18*1.8);
+    color: #333;
+    background-color: #fff;
+    &:active {
+        background-color: #f0f0f0;
+    }
+}
+@component-namespace cs {
+    @component actionsheet {
+      position: fixed;
+      background: #e0e0e0;
+      width: 100%;
+      text-align: center;
+      bottom: 0;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      backface-visibility: hidden;
+      transition: transform .3s ease-out;
+  
+      @descendent list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      @descendent listitem {
+        border-bottom: solid toRem(1*1.8) #e0e0e0;
+      }
+    }
+  }
+
+  .actionsheet-float-enter,
+  .actionsheet-float-leave-active {
+    transform: translate3d(-50%, 100%, 0);
+  }
