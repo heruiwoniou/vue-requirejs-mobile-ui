@@ -10,7 +10,12 @@
                 <h1><i class="fa fa-puzzle-piece"></i>Picker</h1>
             </div>
             <div class="section-container">
-                <cs-picker :slots="slots" @change="onValuesChange" :visibleItemCount=3></cs-picker>
+                时间范围选择<br>
+                <cs-picker :slots="yeartime" @change="onValuesChange" :visibleItemCount=3></cs-picker>
+            </div>
+            <div class="section-container">
+                生日年选择<br>
+                <cs-picker :slots="birthyear"></cs-picker>
             </div>
         </cs-contenter>
     </cs-page>

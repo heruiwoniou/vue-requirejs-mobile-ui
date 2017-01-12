@@ -3,7 +3,7 @@
   }
 
   .picker-toolbar {
-    height: 40px;
+    height: toRem(40*1.8);
   }
 
   .picker-items {
@@ -11,18 +11,18 @@
     justify-content: center;
     padding: 0;
     text-align: right;
-    font-size: 24px;
+    font-size: toRem(24*1.8);
     position: relative;
   }
 
   .picker-center-highlight {
-    height: 36px;
+    height: toRem(36*1.8);
     box-sizing: border-box;
     position: absolute;
     left: 0;
     width: 100%;
     top: 50%;
-    margin-top: -18px;
+    margin-top: toRem(-18*1.8);
     pointer-events: none
   }
 

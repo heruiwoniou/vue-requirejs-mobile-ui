@@ -1,0 +1,6 @@
+<cs-popup v-model="visible" position="bottom" class="cs-datetime">
+    <cs-picker :slots="dateSlots" @change="onChange" :visible-item-count="7" class="cs-datetime-picker" ref="picker" show-toolbar>
+        <span class="cs-datetime-action cs-datetime-cancel" @click="visible = false">{{ cancelText }}</span>
+        <span class="cs-datetime-action cs-datetime-confirm" @click="confirm">{{ confirmText }}</span>
+    </cs-picker>
+</cs-popup>

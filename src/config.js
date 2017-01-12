@@ -19,6 +19,7 @@
             { route: '/Main/JSComponents/MessageBox', name: 'JSComponents_MessageBox', path: 'JSComponents/MessageBox' },
             { route: '/Main/JSComponents/ActionSheet', name: 'JSComponents_ActionSheet', path: 'JSComponents/ActionSheet' },
             { route: '/Main/JSComponents/Picker', name: 'JSComponents_Picker', path: 'JSComponents/Picker' },
+            { route: '/Main/JSComponents/DateTimePicker', name: 'JSComponents_DateTimePicker', path: 'JSComponents/DateTimePicker' },
             { route: '/Main/CSSComponents', name: 'CSSComponents', path: 'CSSComponents' },
             { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' }
         ],

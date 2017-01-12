@@ -1,0 +1,30 @@
+@component-namespace cs {
+    @component datetime {
+      width: 100%;
+
+      .picker-slot-wrapper, .picker-item {
+        backface-visibility: hidden;
+      }
+
+      .picker-toolbar {
+        border-bottom: solid 1px #eaeaea;
+      }
+
+      @descendent action {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        line-height: toRem(40*1.8);
+        font-size: toRem(16*1.8);
+        color: $color-blue;
+      }
+
+      @descendent cancel {
+        float: left;
+      }
+
+      @descendent confirm {
+        float: right;
+      }
+    }
+  }
