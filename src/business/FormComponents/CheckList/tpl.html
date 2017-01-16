@@ -1,0 +1,21 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="CheckList">
+            <router-link to="/Main/FormComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container trl">
+                <h1><i class="fa fa-puzzle-piece"></i>CheckList</h1>
+            </div>
+            <div class="cs-cell-group">
+                <cs-checklist title="复选框列表" v-model="value" :options="['选项A', '选项B', '选项C']">
+                </cs-checklist>
+            </div>
+            <div class="cs-cell-group">
+                <cs-cell title="选中的项">{{ value }}</cs-cell>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

@@ -16,7 +16,9 @@ define([
     'components/ActionSheet/index',
     'components/Popup/index',
     'components/Picker/index',
-    'components/DateTimePicker/index'
+    'components/DateTimePicker/index',
+    'components/Switch/index',
+    'components/CheckList/index'
 ], function(Vue, Toast, MessageBox, Indicator) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;

@@ -1,0 +1,94 @@
+.cs-checkbox{
+    .cs-checkbox-input{
+        &:checked {
+          + .cs-checkbox-core {
+            background-color: $color-blue;
+            border-color: $color-blue;
+
+            &::after {
+              border-color: $color-white;
+              transform: rotate(45deg) scale(1);
+            }
+          }
+        }
+
+        &[disabled] + .cs-checkbox-core {
+          background-color: $color-grey;
+          border-color: #ccc;
+        }
+    }
+    .cs-checkbox-core{
+        &:after {
+          border: toRem(2*1.8) solid transparent;
+          border-left: 0;
+          border-top: 0;
+          content: " ";
+          position: absolute;
+          top: toRem(3*1.8);
+          left: toRem(6*1.8);
+          size: toRem(4*1.8) toRem(8*1.8);
+          transform: rotate(45deg) scale(0);
+          transition: transform .2s;
+        }
+    }
+}
+@component-namespace cs {
+    @component checklist {
+
+      .cs-cell {
+        padding: 0;
+      }
+
+      @descendent label {
+        display: block;
+        padding: 0 toRem(10*1.8);
+        
+      }
+
+      @descendent title {
+        color: $checklist-title-color;
+        display: block;
+        font-size: toRem(12*1.8);
+        margin: toRem(8*1.8);
+        + .cs-cell{
+            .cs-cell-wrapper {
+                background-origin: border-box;
+            }
+        }
+      }
+
+      @when limit {
+        .cs-checkbox-core:not(:checked) {
+          background-color: $color-grey;
+          border-color: $color-grey;
+        }
+      }
+    }
+
+    @component checkbox {
+      @when right {
+        float: right;
+      }
+
+      @descendent label {
+        vertical-align: middle;
+        margin-left: toRem(6*1.8);
+      }
+
+      @descendent input {
+        display: none;
+      }
+
+      @descendent core {
+        display: inline-block;
+        background-color: $color-white;
+        border-radius: 100%;
+        border: toRem(1*1.8) solid #ccc;
+        position: relative;
+        size: toRem(20*1.8);
+        vertical-align: middle;
+
+        
+      }
+    }
+  }

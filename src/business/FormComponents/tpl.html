@@ -9,15 +9,19 @@
             <div class="section-container">
                 <h1><i class="fa fa-cube"></i>FormComponents</h1>
             </div>
-            <cs-cell title="标题文字"></cs-cell>
-            <cs-cell title="标题文字" value="说明文字"></cs-cell>
-            <cs-cell title="标题文字" to="//www.baidu.com" is-link value="带链接"></cs-cell>
-            <cs-cell title="标题文字" icon="fa fa-tasks" value="带 icon"></cs-cell>
-            <cs-cell title="标题文字"><span>icon 是图片</span><img slot="icon" src="../assets/100x100.png" width="24" height="24"></cs-cell>
-            <cs-cell title="标题文字" is-link>
-                <span style="color: green">这里是元素</span>
-            </cs-cell>
-            <cs-cell title="标题" label="描述信息" is-link></cs-cell>
+            <div class="cs-cell-group">
+                <cs-cell title="Switch" is-link to="/Main/FormComponents/Switch"></cs-cell>
+                <cs-cell title="CheckList" is-link to="/Main/FormComponents/CheckList"></cs-cell>
+                <cs-cell title="标题文字" to="//www.baidu.com" is-link value="带链接"></cs-cell>
+                <cs-cell title="标题文字" icon="fa fa-tasks" value="带 icon"></cs-cell>
+                <cs-cell title="标题文字">
+                    <cs-switch></cs-switch>
+                </cs-cell>
+                <cs-cell title="标题文字" is-link>
+                    <span style="color: green">这里是元素</span>
+                </cs-cell>
+                <cs-cell title="标题" label="描述信息" is-link></cs-cell>
+            </div>
         </cs-contenter>
     </cs-page>
 </transition>

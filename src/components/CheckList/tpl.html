@@ -1,0 +1,19 @@
+<div @change="$emit('change', currentValue)" class="cs-checklist" :class="{ 'is-limit': max <= currentValue.length }">
+    <label class="cs-checklist-title" v-text="title"></label>
+    <cs-cell v-for="option in options">
+        <label class="cs-checklist-label" slot="title">
+        <span
+          :class="{'is-right': align === 'right'}"
+          class="cs-checkbox">
+          <input
+            class="cs-checkbox-input"
+            type="checkbox"
+            v-model="currentValue"
+            :disabled="option.disabled"
+            :value="option.value || option">
+          <span class="cs-checkbox-core"></span>
+        </span>
+        <span class="cs-checkbox-label" v-text="option.label || option"></span>
+      </label>
+    </cs-cell>
+</div>

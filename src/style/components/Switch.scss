@@ -1,0 +1,70 @@
+.cs-switch{
+    .cs-switch-label{
+        &:empty {
+          margin-left: 0;
+        }
+    }
+    .cs-switch-input{
+        &:checked {
+          + .cs-switch-core {
+            border-color: $color-blue;
+            background-color: $color-blue;
+
+            &::before {
+              transform: scale(0);
+            }
+
+            &::after {
+              transform: translateX(toRem(20*1.8));
+            }
+          }
+        }
+    }
+    .cs-switch-core{
+        &:after, &:before {
+          content: " ";
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition:transform .3s;
+          border-radius: toRem(15*1.8);
+        }
+
+        &:after {
+          size: toRem(30*1.8);
+          background-color: $color-white;
+          box-shadow: 0 toRem(1*1.8) toRem(3*1.8) rgba(0, 0, 0, .4);
+        }
+
+        &:before {
+          size: toRem(50*1.8) toRem(30*1.8);
+          background-color: #fdfdfd;
+        }
+    }
+}
+@component-namespace cs {
+    @component switch {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      @descendent label {
+        margin-left: toRem(10*1.8);
+        display: inline-block;
+      }
+
+      @descendent core {
+        display: inline-block;
+        position: relative;
+        size: toRem(52*1.8) toRem(32*1.82);
+        border: toRem(1*1.8) solid $color-grey;
+        border-radius: toRem(16*1.8);
+        box-sizing: border-box;
+        background: $color-grey;
+      }
+
+      @descendent input {
+        display: none;
+      }
+    }
+  }

@@ -31,6 +31,9 @@ $_button_primary_background_color: $_base_color;
 $_button_danger_color: #fff;
 $_button_danger_background_color: #ef4f4f;
 
+/* Checklist Component */
+$checklist-title-color: #888;
+
 /* function and mixin*/
 
 @function toRem($number) {

@@ -21,7 +21,9 @@
             { route: '/Main/JSComponents/Picker', name: 'JSComponents_Picker', path: 'JSComponents/Picker' },
             { route: '/Main/JSComponents/DateTimePicker', name: 'JSComponents_DateTimePicker', path: 'JSComponents/DateTimePicker' },
             { route: '/Main/CSSComponents', name: 'CSSComponents', path: 'CSSComponents' },
-            { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' }
+            { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' },
+            { route: '/Main/FormComponents/Switch', name: 'FormComponents_Switch', path: 'FormComponents/Switch' },
+            { route: '/Main/FormComponents/CheckList', name: 'FormComponents_CheckList', path: 'FormComponents/CheckList' },
         ],
         map: function(dispose) {
             return this.modules.map(dispose);

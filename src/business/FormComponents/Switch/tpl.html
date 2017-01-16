@@ -1,0 +1,24 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Switch">
+            <router-link to="/Main/FormComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container trl">
+                <h1><i class="fa fa-puzzle-piece"></i>Switch</h1>
+            </div>
+            <div class="cs-cell-group">
+                <cs-cell title="飞行模式">
+                    <cs-switch v-model="switchValue" @change="changeHandle"></cs-switch>
+                </cs-cell>
+            </div>
+            <div class="cs-cell-group" v-if="switchValue">
+                <cs-cell title="是否开启wifi">
+                    <cs-switch></cs-switch>
+                </cs-cell>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

@@ -1,0 +1,5 @@
+<label class="cs-switch">
+    <input class="cs-switch-input" @change="$emit('change', currentValue)" type="checkbox" v-model="currentValue">
+    <span class="cs-switch-core"></span>
+    <div class="cs-switch-label"><slot></slot></div>
+  </label>
