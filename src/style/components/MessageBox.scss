@@ -33,6 +33,7 @@
           width: 100%;
           appearance: none;
           outline: none;
+          box-sizing: border-box;
         }
         & input.invalid {
           border-color: #ff4949;

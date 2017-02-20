@@ -1,38 +1,38 @@
 {
-  "name": "moral-education-mobile",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@herui:moral-education-mobile.git"
-  },
-  "keywords": [
-    "mobile",
-    "moral-education"
-  ],
-  "author": "comsys",
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^6.6.0",
-    "cssnano": "^3.9.1",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-empty": "^0.1.1",
-    "gulp-postcss": "^6.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-ss-server": "0.0.4",
-    "gulp-uglify": "^2.0.0",
-    "postcss-bem": "^0.4.1",
-    "postcss-clearfix": "^1.0.0",
-    "postcss-nested": "^1.0.0",
-    "postcss-position": "^0.5.0",
-    "postcss-size": "^1.1.1"
-  }
+    "name": "moral-education-mobile",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@herui:moral-education-mobile.git"
+    },
+    "keywords": [
+        "mobile",
+        "moral-education"
+    ],
+    "author": "comsys",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^6.6.0",
+        "cssnano": "^3.9.1",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-empty": "^0.1.1",
+        "gulp-postcss": "^6.2.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.0.0",
+        "gulp-sourcemaps": "^1.9.1",
+        "gulp-ss-server": "0.0.6",
+        "gulp-uglify": "^2.0.0",
+        "postcss-bem": "^0.4.1",
+        "postcss-clearfix": "^1.0.0",
+        "postcss-nested": "^1.0.0",
+        "postcss-position": "^0.5.0",
+        "postcss-size": "^1.1.1"
+    }
 }

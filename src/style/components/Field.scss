@@ -1,23 +1,103 @@
-.cs-field {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    &.cs-field--left input {
-        padding-right: toRem(35);
-    }
-    &.cs-field--right input {
-        padding-left: toRem(35);
-    }
-    i {
-        width: toRem(100);
-        text-align: center;
-        line-height: 1;
-    }
-    input {
+// .cs-field {
+//     box-sizing: border-box;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     &.cs-field--left input {
+//         padding-right: toRem(35);
+//     }
+//     &.cs-field--right input {
+//         padding-left: toRem(35);
+//     }
+//     i {
+//         width: toRem(100);
+//         text-align: center;
+//         line-height: 1;
+//     }
+//     input {
+//         flex: 1;
+//         background: transparent;
+//         border: none;
+//         align-self: stretch;
+//     }
+// }
+@component-namespace cs {
+    @component field {
+      display: flex;
+
+      @when textarea {
+        align-items: inherit;
+
+        .cs-cell-title {
+          padding: 10px 0;
+        }
+
+        .cs-cell-value {
+          padding: 5px 0;
+        }
+      }
+
+      .cs-cell-title {
+        width: 105px;
+        flex: none;
+      }
+
+      .cs-cell-value {
         flex: 1;
-        background: transparent;
-        border: none;
-        align-self: stretch;
+        color: inherit;
+        display: flex;
+      }
+
+      @descendent core {
+        appearance: none;
+        border-radius: 0;
+        border: 0;
+        flex: 1;
+        outline: 0;
+        line-height: 1.6;
+        font-size: inherit;
+        width: 100%;
+      }
+
+      @descendent clear {
+        opacity: .2;
+      }
+
+      @descendent state {
+        color: inherit;
+        margin-left: 20px;
+
+        .mintui {
+          font-size: 20px;
+        }
+
+        @when error {
+          color: $error-color;
+        }
+
+        @when warning {
+          color: $warning-color;
+        }
+
+        @when success {
+          color: $success-color;
+        }
+
+        @when default {
+          margin-left: 0;
+        }
+      }
+
+      @descendent other {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      @when nolabel {
+        .cs-cell-title {
+          display: none;
+        }
+      }
     }
-}
+  }

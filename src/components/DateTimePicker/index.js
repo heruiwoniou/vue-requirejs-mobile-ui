@@ -64,7 +64,7 @@ define(['__component__', './../Picker/index', './../Popup/index', 'text!./tpl.ht
             value: null
         },
 
-        data() {
+        data: function() {
             return {
                 visible: false,
                 startYear: null,
@@ -157,9 +157,9 @@ define(['__component__', './../Picker/index', './../Popup/index', 'text!./tpl.ht
                 var values = [];
                 for (var i = start; i <= end; i++) {
                     if (i < 10) {
-                        values.push(this[`${FORMAT_MAP[type]}Format`].replace('{value}', ('0' + i).slice(-2)));
+                        values.push(this[FORMAT_MAP[type] + "Format"].replace('{value}', ('0' + i).slice(-2)));
                     } else {
-                        values.push(this[`${FORMAT_MAP[type]}Format`].replace('{value}', i));
+                        values.push(this[FORMAT_MAP[type] + "Format"].replace('{value}', i));
                     }
                 }
                 return values;
@@ -352,7 +352,7 @@ define(['__component__', './../Picker/index', './../Popup/index', 'text!./tpl.ht
                 if (this.type.indexOf('date') > -1) {
                     this.currentValue = this.startDate;
                 } else {
-                    this.currentValue = `${ ('0' + this.startHour).slice(-2) }:00`;
+                    this.currentValue = ('0' + this.startHour).slice(-2) + ":00";
                 }
             }
             this.generateSlots();

@@ -1,0 +1,31 @@
+$tab-item-font-size : 12px;
+@component-namespace cs {
+	@component tab-item {
+		display: block;
+		padding: 7px 0;
+		flex: 1;
+		text-decoration: none;
+	
+
+		@descendent icon {
+			size: 24px;
+			margin: 0 auto 5px;
+		}
+
+		@descendent label {
+			color: inherit;
+			font-size: $tab-item-font-size;
+			line-height: 1;
+		}
+	}
+}
+.cs-tab-item-icon{
+	&:empty {
+		display: none;
+	}
+
+	& > * {
+		display: block;
+		size: 100%;
+	}
+}

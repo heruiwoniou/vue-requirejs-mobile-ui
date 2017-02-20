@@ -34,6 +34,17 @@ $_button_danger_background_color: #ef4f4f;
 /* Checklist Component */
 $checklist-title-color: #888;
 
+/* Tab Item Component */
+$tab-item-font-size: 12px;
+
+/* Tabbar Component */
+$tabbar-background-color: #fafafa;
+$tabbar-tab-item-selected-background-color: #eaeaea;
+$tabbar-tab-item-selected-color: $color-blue;
+
+
+$z-index-normal: 1;
+
 /* function and mixin*/
 
 @function toRem($number) {

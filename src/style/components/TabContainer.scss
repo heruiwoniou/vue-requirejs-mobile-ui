@@ -1,0 +1,17 @@
+@component-namespace cs {
+    @component tab-container {
+      overflow: hidden;
+      position: relative;
+
+      @descendent wrap {
+        display: flex;
+        @when tabbar{
+          padding-bottom: 54px;
+        }
+      }
+
+      .swipe-transition {
+        transition: transform 150ms ease-in-out;
+      }
+    }
+  }

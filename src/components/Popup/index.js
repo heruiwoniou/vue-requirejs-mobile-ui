@@ -50,7 +50,7 @@ define(['__component__', 'vue-popup', 'text!./tpl.html'], function(component, Po
 
         beforeMount: function() {
             if (this.popupTransition !== 'popup-fade') {
-                this.currentTransition = `popup-slide-${ this.position }`;
+                this.currentTransition = "popup-slide-" + this.position;
             }
         },
 

@@ -24,9 +24,9 @@
           border-top: 0;
           content: " ";
           position: absolute;
-          top: toRem(3*1.8);
+          top: toRem(2*1.8);
           left: toRem(6*1.8);
-          size: toRem(4*1.8) toRem(8*1.8);
+          size: toRem(6*1.8) toRem(11*1.8);
           transform: rotate(45deg) scale(0);
           transition: transform .2s;
         }

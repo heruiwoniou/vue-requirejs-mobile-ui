@@ -1,6 +1,7 @@
 define(function() {
     return function module(moduleName) {
         return {
+
             methods: {
                 Toast1: function() {
                     this.$toast('提示信息');

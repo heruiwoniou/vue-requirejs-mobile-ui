@@ -18,6 +18,7 @@ require.config({
         'detector': 'common/detector',
         'calc': 'common/calculate',
         'emitter': 'common/mixins/emitter',
+        'clickoutside': 'common/utils/clickoutside',
         'install': 'components/install'
     },
     map: {

@@ -1,0 +1,30 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Filed">
+            <router-link to="/Main/FormComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="cs-cell-group">
+                <cs-field label="用户名" placeholder="请输入用户名"></cs-field>
+                <cs-field label="邮箱" placeholder="请输入邮箱" type="email"></cs-field>
+                <cs-field label="密码" placeholder="请输入密码" type="password"></cs-field>
+                <cs-field label="手机号" placeholder="请输入手机号" type="tel"></cs-field>
+                <cs-field label="网站" placeholder="请输入网址" type="url"></cs-field>
+                <cs-field label="数字" placeholder="请输入数字" type="number"></cs-field>
+                <cs-field label="自我介绍" placeholder="自我介绍" type="textarea" rows="4"></cs-field>
+            </div>
+            <div class="cs-cell-group">
+                <cs-field label="邮箱" state="success"></cs-field>
+                <cs-field label="邮箱" state="error"></cs-field>
+                <cs-field label="邮箱" state="warning"></cs-field>
+            </div>
+            <div class="cs-cell-group">
+                <cs-field label="验证码">
+                    <img src="http://placehold.it/100x100" height="40px" width="100px">
+                </cs-field>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

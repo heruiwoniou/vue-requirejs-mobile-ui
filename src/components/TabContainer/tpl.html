@@ -1,0 +1,5 @@
+<div @touchstart="startDrag" @mousedown="startDrag" @touchmove="onDrag" @mousemove="onDrag" @mouseleave="endDrag" @touchend="endDrag" class="cs-tab-container">
+    <div ref="wrap" class="cs-tab-container-wrap" :class="tabbar?'is-tabbar':''">
+        <slot></slot>
+    </div>
+</div>

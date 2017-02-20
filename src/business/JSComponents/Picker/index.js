@@ -27,7 +27,7 @@ define(function() {
                 }
             },
             methods: {
-                onValuesChange(picker, values) {
+                onValuesChange: function(picker, values) {
                     if (values[0] > values[1]) {
                         picker.setSlotValue(1, values[0]);
                     }

@@ -1,0 +1,42 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Tab">
+            <router-link to="/Main/FormComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container trl">
+                <h1><i class="fa fa-puzzle-piece"></i>Tab</h1>
+            </div>
+            <cs-tab-container v-model="active" :swipeable="true" :tabbar="true">
+                <cs-tab-container-item id="tab-container1">
+                    <div class="cs-cell-group">
+                        <cs-cell v-for="n in 20" :title=" 'tab-container' + n"></cs-cell>
+                    </div>
+                </cs-tab-container-item>
+                <cs-tab-container-item id="tab-container2">
+                    <div class="cs-cell-group">
+                        <cs-cell v-for="n in 5" title="tab-container 2"></cs-cell>
+                    </div>
+                </cs-tab-container-item>
+                <cs-tab-container-item id="tab-container3">
+                    <div class="cs-cell-group">
+                        <cs-cell v-for="n in 7" title="tab-container 3"></cs-cell>
+                    </div>
+                </cs-tab-container-item>
+            </cs-tab-container>
+            <cs-tabbar v-model="active" :fixed="true">
+                <cs-tab-item id="tab-container1">
+                    <img slot="icon" src="http://placehold.it/100x100"> tab1
+                </cs-tab-item>
+                <cs-tab-item id="tab-container2">
+                    <img slot="icon" src="http://placehold.it/100x100"> tab2
+                </cs-tab-item>
+                <cs-tab-item id="tab-container3">
+                    <img slot="icon" src="http://placehold.it/100x100"> tab3
+                </cs-tab-item>
+            </cs-tabbar>
+        </cs-contenter>
+    </cs-page>
+</transition>

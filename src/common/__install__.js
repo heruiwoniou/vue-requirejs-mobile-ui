@@ -18,7 +18,11 @@ define([
     'components/Picker/index',
     'components/DateTimePicker/index',
     'components/Switch/index',
-    'components/CheckList/index'
+    'components/CheckList/index',
+    'components/TabContainer/index',
+    'components/TabContainerItem/index',
+    'components/TabItem/index',
+    'components/TabBar/index'
 ], function(Vue, Toast, MessageBox, Indicator) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;

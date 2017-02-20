@@ -8,7 +8,7 @@ define(function() {
                 }
             };
             el[clickoutsideContext] = {
-                documentHandler,
+                documentHandler: documentHandler,
                 methodName: binding.expression,
                 arg: binding.arg || 'click'
             };

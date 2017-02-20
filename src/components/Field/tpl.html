@@ -1,10 +1,17 @@
-<div class="cs-field" :class="{'cs-field--left' : leftIcon,'cs-field--right' : rightIcon}">
-    <slot name="left-icon">
-        <i v-if="leftIcon" :class="leftIcon"></i>
-    </slot>
-    <input :type="type" v-if="type!='textarea'" :placeholder="placeholder" :disabled="disabled" :readonly="readonly" :class="['cs-filed--' + type]" />
-    <textarea v-else :rows="rows" :placeholder="placeholder" :disabled="disabled" :readonly="readonly"></textarea>
-    <slot name="right-icon">
-        <i v-if="rightIcon" :class="rightIcon"></i>
-    </slot>
-</div>
+<cs-cell class="cs-field" :title="label" :icon="icon" v-clickoutside="doCloseActive" :class="[{
+      'is-textarea': type === 'textarea',
+      'is-nolabel': !label
+    }]">
+    <textarea @change="$emit('change', currentValue)" ref="textarea" class="cs-field-core" :placeholder="placeholder" v-if="type === 'textarea'" :rows="rows" :disabled="disabled" :readonly="readonly" v-model="currentValue">
+    </textarea>
+    <input @change="$emit('change', currentValue)" ref="input" class="cs-field-core" :placeholder="placeholder" :number="type === 'number'" v-else :type="type" @focus="active = true" :disabled="disabled" :readonly="readonly" :value="currentValue" @input="handleInput">
+    <div @click="handleClear" class="cs-field-clear" v-if="!disableClear" v-show="currentValue && type !== 'textarea' && active">
+        <i class="fa fa-times-circle"></i>
+    </div>
+    <span class="cs-field-state" v-if="state" :class="['is-' + state]">
+      <i class="fa" :class="['fa-' + stateIcon]"></i>
+    </span>
+    <div class="cs-field-other">
+        <slot></slot>
+    </div>
+</cs-cell>

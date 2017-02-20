@@ -1,6 +1,6 @@
 define(function() {
     function broadcast(componentName, eventName, params) {
-        this.$children.forEach(child => {
+        this.$children.forEach(function(child) {
             var name = child.$options.componentName;
 
             if (name === componentName) {
@@ -8,7 +8,7 @@ define(function() {
             } else {
                 broadcast.apply(child, [componentName, eventName].concat(params));
             }
-        });
+        }.bind(this));
     }
     return {
         methods: {

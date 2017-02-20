@@ -1,0 +1,8 @@
+<a class="cs-tab-item" @click="$parent.$emit('input', id)" :class="{ 'is-selected': $parent.value === id }">
+    <div class="cs-tab-item-icon">
+        <slot name="icon"></slot>
+    </div>
+    <div class="cs-tab-item-label">
+        <slot></slot>
+    </div>
+</a>

@@ -1,4 +1,4 @@
-define(['__component__', './../Cell/index', './clickoutside', 'wind-dom', 'text!./tpl.html'], function(component, csCell, Clickoutside, WindDom, template) {
+define(['__component__', './../Cell/index', 'clickoutside', 'wind-dom', 'text!./tpl.html'], function(component, csCell, Clickoutside, WindDom, template) {
     var once = WindDom.once;
     return component('cs-cell-swipe', {
         template: template,
