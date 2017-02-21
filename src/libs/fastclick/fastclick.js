@@ -2,6 +2,18 @@
 (function() {
     'use strict';
 
+    var supportsPassive = false;
+    try {
+        var opts = Object.defineProperty({}, 'passive', {
+            get: function() {
+                supportsPassive = true;
+            }
+        });
+        window.addEventListener("supportsPassiveTest", null, opts);
+        window.removeEventListener('supportsPassiveTest', null);
+        window.supportsPassive = supportsPassive;
+    } catch (e) {}
+
     /**
      * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
      *
@@ -121,16 +133,16 @@
 
         // Set up event handlers as required
         if (deviceIsAndroid) {
-            layer.addEventListener('mouseover', this.onMouse, true);
-            layer.addEventListener('mousedown', this.onMouse, true);
-            layer.addEventListener('mouseup', this.onMouse, true);
+            layer.addEventListener('mouseover', this.onMouse, supportsPassive ? { capture: true, passive: false } : true);
+            layer.addEventListener('mousedown', this.onMouse, supportsPassive ? { capture: true, passive: false } : true);
+            layer.addEventListener('mouseup', this.onMouse, supportsPassive ? { capture: true, passive: false } : true);
         }
 
-        layer.addEventListener('click', this.onClick, true);
-        layer.addEventListener('touchstart', this.onTouchStart, false);
-        layer.addEventListener('touchmove', this.onTouchMove, false);
-        layer.addEventListener('touchend', this.onTouchEnd, false);
-        layer.addEventListener('touchcancel', this.onTouchCancel, false);
+        layer.addEventListener('click', this.onClick, supportsPassive ? { capture: true, passive: false } : true);
+        layer.addEventListener('touchstart', this.onTouchStart, supportsPassive ? { passive: false } : false);
+        layer.addEventListener('touchmove', this.onTouchMove, supportsPassive ? { passive: false } : false);
+        layer.addEventListener('touchend', this.onTouchEnd, supportsPassive ? { passive: false } : false);
+        layer.addEventListener('touchcancel', this.onTouchCancel, supportsPassive ? { passive: false } : false);
 
         // Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
         // which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
@@ -169,7 +181,7 @@
             oldOnClick = layer.onclick;
             layer.addEventListener('click', function(event) {
                 oldOnClick(event);
-            }, false);
+            }, supportsPassive ? { passive: false } : false);
             layer.onclick = null;
         }
     }
@@ -329,7 +341,10 @@
         // Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
         if (deviceIsIOS && targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
             length = targetElement.value.length;
-            targetElement.setSelectionRange(length, length);
+            try {
+                targetElement.setSelectionRange(length, length);
+            } catch (e) {}
+
         } else {
             targetElement.focus();
         }

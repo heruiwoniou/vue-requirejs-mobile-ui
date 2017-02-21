@@ -11,19 +11,28 @@
             </div>
             <cs-tab-container v-model="active" :swipeable="true" :tabbar="true">
                 <cs-tab-container-item id="tab-container1">
-                    <div class="cs-cell-group">
-                        <cs-cell v-for="n in 20" :title=" 'tab-container' + n"></cs-cell>
+                    <div class="cs-cell-group" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
+                        <cs-cell v-for="n in list" :title=" 'tab-container' + n"></cs-cell>
+                    </div>
+                    <div class="cs-cell-group" style="text-align: center;">
+                        <div style="display: inline-block">
+                            <cs-spinner :type="1"></cs-spinner>
+                        </div>
                     </div>
                 </cs-tab-container-item>
                 <cs-tab-container-item id="tab-container2">
-                    <div class="cs-cell-group">
-                        <cs-cell v-for="n in 5" title="tab-container 2"></cs-cell>
-                    </div>
+                    <cs-loadmore :top-method="loadTop" ref="loadmoretop">
+                        <div class="cs-cell-group">
+                            <cs-cell v-for="n in rlist" :title="n.toString()"></cs-cell>
+                        </div>
+                    </cs-loadmore>
                 </cs-tab-container-item>
                 <cs-tab-container-item id="tab-container3">
-                    <div class="cs-cell-group">
-                        <cs-cell v-for="n in 7" title="tab-container 3"></cs-cell>
-                    </div>
+                    <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
+                        <div class="cs-cell-group">
+                            <cs-cell v-for="n in list" :title="'tab-container'+n.toString()"></cs-cell>
+                        </div>
+                    </cs-loadmore>
                 </cs-tab-container-item>
             </cs-tab-container>
             <cs-tabbar v-model="active" :fixed="true">

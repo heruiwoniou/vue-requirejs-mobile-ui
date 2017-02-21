@@ -1,26 +1,3 @@
-// .cs-field {
-//     box-sizing: border-box;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     &.cs-field--left input {
-//         padding-right: toRem(35);
-//     }
-//     &.cs-field--right input {
-//         padding-left: toRem(35);
-//     }
-//     i {
-//         width: toRem(100);
-//         text-align: center;
-//         line-height: 1;
-//     }
-//     input {
-//         flex: 1;
-//         background: transparent;
-//         border: none;
-//         align-self: stretch;
-//     }
-// }
 @component-namespace cs {
     @component field {
       display: flex;
@@ -29,16 +6,16 @@
         align-items: inherit;
 
         .cs-cell-title {
-          padding: 10px 0;
+          padding: toRem(10*1.8) 0;
         }
 
         .cs-cell-value {
-          padding: 5px 0;
+          padding: toRem(5*1.8) 0;
         }
       }
 
       .cs-cell-title {
-        width: 105px;
+        width: toRem(105*1.8);
         flex: none;
       }
 
@@ -65,10 +42,10 @@
 
       @descendent state {
         color: inherit;
-        margin-left: 20px;
+        margin-left: toRem(20*1.8);
 
-        .mintui {
-          font-size: 20px;
+        .fa {
+          font-size: toRem(20*1.8);
         }
 
         @when error {

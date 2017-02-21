@@ -1,15 +1,15 @@
-$tab-item-font-size : 12px;
+$tab-item-font-size : toRem(12*1.8);
 @component-namespace cs {
 	@component tab-item {
 		display: block;
-		padding: 7px 0;
+		padding: toRem(7*1.8) 0;
 		flex: 1;
 		text-decoration: none;
 	
 
 		@descendent icon {
-			size: 24px;
-			margin: 0 auto 5px;
+			size: toRem(24*1.8);
+			margin: 0 auto toRem(5*1.8);
 		}
 
 		@descendent label {

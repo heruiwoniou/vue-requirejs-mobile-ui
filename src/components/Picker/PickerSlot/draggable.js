@@ -39,7 +39,7 @@ define(function() {
                 event.preventDefault();
                 options.start(supportTouch ? event.changedTouches[0] || event.touches[0] : event);
             }
-        });
+        }, window.supportsPassive ? { passive: false } : false);
 
         if (supportTouch) {
             element.addEventListener('touchmove', moveFn);

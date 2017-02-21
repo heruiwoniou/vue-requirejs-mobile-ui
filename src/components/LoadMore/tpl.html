@@ -1,0 +1,17 @@
+<div class="cs-loadmore">
+    <div class="cs-loadmore-content" :class="{ 'is-dropped': topDropped || bottomDropped}" :style="{ 'transform': 'translate3d(0, ' + translate + 'px, 0)' }">
+        <slot name="top">
+            <div class="cs-loadmore-top" v-if="topMethod">
+                <spinner v-if="topStatus === 'loading'" class="cs-loadmore-spinner" :size="20" type="fading-circle"></spinner>
+                <span class="cs-loadmore-text">{{ topText }}</span>
+            </div>
+        </slot>
+        <slot></slot>
+        <slot name="bottom">
+            <div class="cs-loadmore-bottom" v-if="bottomMethod">
+                <spinner v-if="bottomStatus === 'loading'" class="cs-loadmore-spinner" :size="20" type="fading-circle"></spinner>
+                <span class="cs-loadmore-text">{{ bottomText }}</span>
+            </div>
+        </slot>
+    </div>
+</div>

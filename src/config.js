@@ -24,7 +24,6 @@
             { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' },
             { route: '/Main/FormComponents/Switch', name: 'FormComponents_Switch', path: 'FormComponents/Switch' },
             { route: '/Main/FormComponents/CheckList', name: 'FormComponents_CheckList', path: 'FormComponents/CheckList' },
-
             { route: '/Main/FormComponents/Tab', name: 'FormComponents_Tab', path: 'FormComponents/Tab' },
             { route: '/Main/FormComponents/Field', name: 'FormComponents_Field', path: 'FormComponents/Field' }
         ],

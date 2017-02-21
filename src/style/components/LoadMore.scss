@@ -1,0 +1,35 @@
+@component-namespace cs {
+	@component loadmore {
+		overflow: hidden;
+
+		@descendent content {
+			@when dropped {
+				transition: .2s;
+			}
+		}
+
+		@descendent top {
+			text-align: center;
+			height: toRem(50*1.8);
+			line-height: toRem(50*1.8);
+			margin-top: toRem(-50*1.8);
+		}
+
+		@descendent bottom {
+			text-align: center;
+			height: toRem(70*1.8);
+			line-height: toRem(40*1.8);
+			margin-bottom: toRem(-70*1.8);
+		}
+
+		@descendent spinner {
+			display: inline-block;
+			margin-right: toRem(5*1.8);
+			// vertical-align: middle;
+		}
+
+		@descendent text {
+			vertical-align: middle;
+		}
+	}
+  }

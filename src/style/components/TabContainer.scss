@@ -6,7 +6,7 @@
       @descendent wrap {
         display: flex;
         @when tabbar{
-          padding-bottom: 54px;
+          padding-bottom: toRem(60*1.8);
         }
       }
 
