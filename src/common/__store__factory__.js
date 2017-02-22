@@ -16,7 +16,8 @@ define(function(types) {
             transitionName: 'fade',
             topLayer: false
         };
-        //mutations
+        this.getters = {};
+
         this.mutations = {};
 
         this.mutations[module + types.TOP_LAYER] = function(state) {

@@ -27,18 +27,33 @@
         })
 
         router.beforeEach(function(to, from, next) {
-            const toDepth = to.path.split('/').length;
-            const fromDepth = from.path.split('/').length;
-            var direction = toDepth - fromDepth;
-            store.dispatch('transition', {
-                direction: direction,
-                to: to.path,
-                from: from.path
+            if (to.path == '/') {
+                window.setTimeout(function() {
+                    next();
+                })
+                return;
+            }
+            store.dispatch('auth').then(function() {
+                const toDepth = to.path.split('/').length;
+                const fromDepth = from.path.split('/').length;
+                var direction = toDepth - fromDepth;
+                store.dispatch('transition', {
+                    direction: direction,
+                    to: to.path,
+                    from: from.path
+                });
+                window.setTimeout(function() {
+                    next();
+                })
+            }, function() {
+                Vue.$toast({
+                    message: '验证信息已失效，请重新登陆',
+                    iconClass: 'fa fa-close'
+                });
+                window.setTimeout(function() {
+                    next({ path: '/' });
+                })
             });
-            window.setTimeout(function() {
-                next();
-            })
-
         })
 
         return {
