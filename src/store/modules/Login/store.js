@@ -36,7 +36,7 @@ define(function() {
                             reject();
                         }
 
-                    }, 2000);
+                    });
                     // $.get('/api/verify', { username: opt.username, password: opt.password }).then(function(data) {
                     //     if (data.state) {
                     //         content.commit('success', data.auth);
@@ -63,7 +63,7 @@ define(function() {
                             content.commit('fail');
                             reject();
                         }
-                    }, 2000);
+                    });
                     // $.get('/api/auth', { auth: content.state.auth }).then(function(data) {
                     //     if (data) {
                     //         content.commit('success');

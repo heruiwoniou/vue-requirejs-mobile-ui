@@ -24,27 +24,30 @@
         var router = new VueRouter({
             mode: 'hash',
             routes: routes,
-        })
+        });
+
+        var goto = function(to, from, next) {
+            const toDepth = to.path.split('/').length;
+            const fromDepth = from.path.split('/').length;
+            var direction = toDepth - fromDepth;
+            store.dispatch('transition', {
+                direction: direction,
+                to: to.path,
+                from: from.path
+            });
+            window.setTimeout(function() {
+                next();
+            })
+        }
 
         router.beforeEach(function(to, from, next) {
+            var args = arguments;
             if (to.path == '/') {
-                window.setTimeout(function() {
-                    next();
-                })
+                goto.apply(this, args);
                 return;
             }
             store.dispatch('auth').then(function() {
-                const toDepth = to.path.split('/').length;
-                const fromDepth = from.path.split('/').length;
-                var direction = toDepth - fromDepth;
-                store.dispatch('transition', {
-                    direction: direction,
-                    to: to.path,
-                    from: from.path
-                });
-                window.setTimeout(function() {
-                    next();
-                })
+                goto.apply(this, args);
             }, function() {
                 Vue.$toast({
                     message: '验证信息已失效，请重新登陆',
