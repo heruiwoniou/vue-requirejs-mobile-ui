@@ -25,7 +25,8 @@ define([
     'components/TabItem/index',
     'components/TabBar/index',
     'components/Spinner/index',
-    'components/LoadMore/index'
+    'components/LoadMore/index',
+    'components/Search/index'
 ], function(Vue, Toast, MessageBox, Indicator, InfiniteScroll) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;

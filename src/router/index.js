@@ -15,6 +15,7 @@
         var routes = __config__.map(function(o, i) {
             var clone = Object.assign({}, o);
             delete clone.name;
+            delete clone.store;
             clone.path = clone.route;
             delete clone.route;
             clone.component = m[i];
@@ -25,21 +26,28 @@
             mode: 'hash',
             routes: routes,
         });
-
+        var firstLoad = true;
         var goto = function(to, from, next) {
-            const toDepth = to.path.split('/').length;
-            const fromDepth = from.path.split('/').length;
+            var toDepth = to.path.split('/').length;
+            var fromDepth = from.path.split('/').length;
+            toDepth += (to.path == '/' ? -1 : 0);
+            fromDepth += (from.path == '/' ? -1 : 0);
             var direction = toDepth - fromDepth;
-            store.dispatch('transition', {
-                direction: direction,
-                to: to.path,
-                from: from.path
-            });
-            window.setTimeout(function() {
-                next();
-            })
+            if (firstLoad && toDepth > 0) {
+                firstLoad = false;
+                next({ path: '/' });
+            } else {
+                store.dispatch('transition', {
+                    direction: direction,
+                    to: to.path,
+                    from: from.path
+                });
+                window.setTimeout(function() {
+                    next();
+                });
+                firstLoad = false;
+            }
         }
-
         router.beforeEach(function(to, from, next) {
             var args = arguments;
             if (to.path == '/') {

@@ -1,0 +1,66 @@
+@component-namespace cs {
+    @component search {
+      height: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    @component searchbar {
+      position: relative;
+      align-items: center;
+      background-color: $color-grey;
+      box-sizing: border-box;
+      display: flex;
+      padding: toRem(8*1.8) toRem(10*1.8);
+      z-index: 1;
+
+      @descendent inner {
+        align-items: center;
+        background-color: $color-white;
+        border-radius: toRem(2*1.8);
+        display: flex;
+        flex: 1;
+        height: toRem(28*1.8);
+        padding: toRem(4*1.8) toRem(6*1.8);
+
+        .fa-search {
+          font-size: toRem(12*1.8);
+          color: $color-grey;
+          margin-right: toRem(10*1.8);
+        }
+      }
+
+      @descendent core {
+        appearance: none;
+        border: 0;
+        box-sizing: border-box;
+        height: 100%;
+        outline: 0;
+      }
+
+      @descendent placeholder {
+        align-items: center;
+        color: #9b9b9b;
+        display: flex;
+        font-size: toRem(12*1.8);
+        justify-content: center;
+        position: absolute 0 0 0 0;
+
+        .cs-search {
+          font-size: toRem(12*1.8);
+        }
+      }
+
+      @descendent cancel {
+        color: $color-blue;
+        margin-left: toRem(10*1.8);
+        text-decoration: none;
+      }
+    }
+
+    @component search-list {
+      overflow: auto;
+      padding-top: toRem(44*1.8);
+      position: absolute 0 0 0 0;
+    }
+  }

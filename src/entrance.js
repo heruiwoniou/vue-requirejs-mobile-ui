@@ -53,7 +53,7 @@ require(['fastclick', 'application'], function(FastClick, application) {
     document.addEventListener('DOMContentLoaded', recalc, false);
 
     /*消除移动端click事件的延时*/
-    // FastClick.attach(document.body);
+    //FastClick.attach(document.body);
 
     /*应用程序 初始加载*/
     application.run();

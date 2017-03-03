@@ -3,8 +3,12 @@ define(function() {
         return {
             data: function() {
                 return {
-                    search: false,
-                    searchVal: ''
+                    popupVisible: false
+                }
+            },
+            methods: {
+                Popup: function() {
+                    this.popupVisible = true;
                 }
             }
         }

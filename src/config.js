@@ -11,7 +11,7 @@
          * *path: 模块路径
          */
         modules: [
-            { route: '/', name: 'Login', path: 'Login' },
+            { route: '/', name: 'Login', path: 'Login', store: true },
             { route: '/Main', name: 'Main', path: 'Main' },
             { route: '/Main/JSComponents', name: 'JSComponents', path: 'JSComponents' },
             { route: '/Main/JSComponents/Toast', name: 'JSComponents_Toast', path: 'JSComponents/Toast' },
@@ -20,6 +20,7 @@
             { route: '/Main/JSComponents/ActionSheet', name: 'JSComponents_ActionSheet', path: 'JSComponents/ActionSheet' },
             { route: '/Main/JSComponents/Picker', name: 'JSComponents_Picker', path: 'JSComponents/Picker' },
             { route: '/Main/JSComponents/DateTimePicker', name: 'JSComponents_DateTimePicker', path: 'JSComponents/DateTimePicker' },
+            { route: '/Main/JSComponents/Popup', name: 'JSComponents_Popup', path: 'JSComponents/Popup' },
             { route: '/Main/CSSComponents', name: 'CSSComponents', path: 'CSSComponents' },
             { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' },
             { route: '/Main/FormComponents/Switch', name: 'FormComponents_Switch', path: 'FormComponents/Switch' },

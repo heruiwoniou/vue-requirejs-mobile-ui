@@ -12,11 +12,20 @@ define([
             Vue.config.silent = false;
             Vue.config.devtools = true;
             Vue.mixin(Emitter);
-            $vm = new Vue({
+            var $vm = new Vue({
                 el: 'body > div',
                 store: store,
                 template: router.tpl,
                 router: router.router
+                    // ,mounted: function() {
+                    //     document.body.addEventListener('touchmove', function(ev) {
+                    //         ev.preventDefault();
+                    //     }, supportsPassive ? { passive: false } : false);
+                    //     this.$el.addEventListener('touchmove', function(ev) {
+                    //         ev.preventDefault();
+                    //         ev.stopPropagation();
+                    //     }, supportsPassive ? { passive: false } : false);
+                    // }
             });
         }
     }

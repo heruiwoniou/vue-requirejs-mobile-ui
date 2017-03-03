@@ -1,0 +1,21 @@
+<div class="cs-search">
+    <div class="cs-searchbar">
+        <div class="cs-searchbar-inner">
+            <i class="fa fa-search" v-show="visible"></i>
+            <input ref="input" @click="visible = true" type="search" v-model="currentValue" :placeholder="visible ? placeholder : ''" class="cs-searchbar-core">
+        </div>
+        <a class="cs-searchbar-cancel" @click="visible = false, currentValue = ''" v-show="visible" v-text="cancelText">
+        </a>
+        <label @click="visible = true, $refs.input.focus()" class="cs-searchbar-placeholder" v-show="!visible">
+        <i class="fa fa-search"></i>
+        <span class="cs-searchbar-text" v-text="placeholder"></span>
+      </label>
+    </div>
+    <div class="cs-search-list" v-show="show || currentValue">
+        <div class="cs-search-list-warp">
+            <slot>
+                <cs-cell v-for="(item, index) in result" :key="index" :title="item"></cs-cell>
+            </slot>
+        </div>
+    </div>
+</div>
