@@ -70,16 +70,17 @@ var base = {
     }]
 }
 
-function filter(arr, fun) {
+function filter(source, fun) {
     var arr = []
-    arr.forEach(o => {
+    source.forEach(o => {
+        console.log(fun(o))
         if (fun(o)) {
             arr.push(o);
         }
     });
     return arr;
 }
-base.modules[0].include = base.modules[0].include.concat(filter(__config__, o => o.store).map(o => {
+base.modules[0].include = base.modules[0].include.concat(filter(__config__.modules, o => o.store).map(o => {
     return 'store/modules/' + o.path + '/store';
 }));
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
