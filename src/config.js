@@ -7,26 +7,25 @@
         //规则说明
         /**
          * route : 路由名称
-         * name : 模块名称
          * *path: 模块路径
          */
         modules: [
-            { route: '/', name: 'Login', path: 'Login', store: true },
-            { route: '/Main', name: 'Main', path: 'Main' },
-            { route: '/Main/JSComponents', name: 'JSComponents', path: 'JSComponents' },
-            { route: '/Main/JSComponents/Toast', name: 'JSComponents_Toast', path: 'JSComponents/Toast' },
-            { route: '/Main/JSComponents/Indicator', name: 'JSComponents_Indicator', path: 'JSComponents/Indicator' },
-            { route: '/Main/JSComponents/MessageBox', name: 'JSComponents_MessageBox', path: 'JSComponents/MessageBox' },
-            { route: '/Main/JSComponents/ActionSheet', name: 'JSComponents_ActionSheet', path: 'JSComponents/ActionSheet' },
-            { route: '/Main/JSComponents/Picker', name: 'JSComponents_Picker', path: 'JSComponents/Picker' },
-            { route: '/Main/JSComponents/DateTimePicker', name: 'JSComponents_DateTimePicker', path: 'JSComponents/DateTimePicker' },
-            { route: '/Main/JSComponents/Popup', name: 'JSComponents_Popup', path: 'JSComponents/Popup' },
-            { route: '/Main/CSSComponents', name: 'CSSComponents', path: 'CSSComponents' },
-            { route: '/Main/FormComponents', name: 'FormComponents', path: 'FormComponents' },
-            { route: '/Main/FormComponents/Switch', name: 'FormComponents_Switch', path: 'FormComponents/Switch' },
-            { route: '/Main/FormComponents/CheckList', name: 'FormComponents_CheckList', path: 'FormComponents/CheckList' },
-            { route: '/Main/FormComponents/Tab', name: 'FormComponents_Tab', path: 'FormComponents/Tab' },
-            { route: '/Main/FormComponents/Field', name: 'FormComponents_Field', path: 'FormComponents/Field' }
+            { route: '/',  path: 'Login', store: true },
+            { route: '/Main',  path: 'Main' },
+            { route: '/Main/JSComponents',  path: 'JSComponents' },
+            { route: '/Main/JSComponents/Toast',  path: 'JSComponents/Toast' },
+            { route: '/Main/JSComponents/Indicator',  path: 'JSComponents/Indicator' },
+            { route: '/Main/JSComponents/MessageBox',  path: 'JSComponents/MessageBox' },
+            { route: '/Main/JSComponents/ActionSheet',  path: 'JSComponents/ActionSheet' },
+            { route: '/Main/JSComponents/Picker',  path: 'JSComponents/Picker' },
+            { route: '/Main/JSComponents/DateTimePicker',  path: 'JSComponents/DateTimePicker' },
+            { route: '/Main/JSComponents/Popup',  path: 'JSComponents/Popup' },
+            { route: '/Main/CSSComponents',  path: 'CSSComponents' },
+            { route: '/Main/FormComponents',  path: 'FormComponents' },
+            { route: '/Main/FormComponents/Switch',  path: 'FormComponents/Switch' },
+            { route: '/Main/FormComponents/CheckList',  path: 'FormComponents/CheckList' },
+            { route: '/Main/FormComponents/Tab',  path: 'FormComponents/Tab' },
+            { route: '/Main/FormComponents/Field',  path: 'FormComponents/Field' }
         ],
         map: function(dispose) {
             return this.modules.map(dispose);

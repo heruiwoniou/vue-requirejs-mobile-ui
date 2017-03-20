@@ -8,7 +8,6 @@ module.exports = {
         })
     },
     auth(query) {
-        console.log(auth);
         return this.render.json(query.auth == auth)
     }
 }

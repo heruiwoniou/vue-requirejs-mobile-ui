@@ -23,8 +23,7 @@ define(function() {
 
     return function(content, params) {
         if (params.direction > 0) {
-
-            if (params.from == '/') {
+            if (params.from == '_') {
                 content.dispatch(toUpperCase(params.to) + '_IN_BOTTOM');
                 content.dispatch(toUpperCase(params.from) + '_OUT_TOP');
             } else {
@@ -34,7 +33,7 @@ define(function() {
             }
         } else if (params.direction < 0) {
             //从低级跳至高级
-            if (params.to == '/') {
+            if (params.to == '_') {
                 //从低级跳至子节点
                 content.dispatch(toUpperCase(params.to) + '_IN_TOP');
                 content.dispatch(toUpperCase(params.from) + '_OUT_BOTTOM');
