@@ -9,6 +9,8 @@
     /**
          * route : 路由名称
          * *path: 模块路径
+         * *store: 开启了store(必须有相应的store文件)
+         * *sync: 未指定的业务模块将会做为异步加载
          */
     modules: [
       {
@@ -18,10 +20,12 @@
         sync: true
       }, {
         route: '/Main',
-        path: 'Main'
+        path: 'Main',
+        sync: true
       }, {
         route: '/Main/JSComponents',
-        path: 'JSComponents'
+        path: 'JSComponents',
+        sync: true
       }, {
         route: '/Main/JSComponents/Toast',
         path: 'JSComponents/Toast'
@@ -45,10 +49,12 @@
         path: 'JSComponents/Popup'
       }, {
         route: '/Main/CSSComponents',
-        path: 'CSSComponents'
+        path: 'CSSComponents',
+        sync: true
       }, {
         route: '/Main/FormComponents',
-        path: 'FormComponents'
+        path: 'FormComponents',
+        sync: true
       }, {
         route: '/Main/FormComponents/Switch',
         path: 'FormComponents/Switch'

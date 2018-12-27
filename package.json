@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.html",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "gulp",
+        "build": "gulp pack && node build/node2build.js"
     },
     "repository": {
         "type": "git",
@@ -19,6 +21,7 @@
     "devDependencies": {
         "autoprefixer": "^6.6.0",
         "cssnano": "^3.9.1",
+        "express": "^4.16.4",
         "gulp": "^3.9.1",
         "gulp-clean": "^0.3.2",
         "gulp-concat": "^2.6.1",
@@ -27,12 +30,12 @@
         "gulp-rename": "^1.2.2",
         "gulp-sass": "^3.0.0",
         "gulp-sourcemaps": "^1.9.1",
-        "gulp-ss-server": "0.0.6",
         "gulp-uglify": "^2.0.0",
         "postcss-bem": "^0.4.1",
         "postcss-clearfix": "^1.0.0",
         "postcss-nested": "^1.0.0",
         "postcss-position": "^0.5.0",
-        "postcss-size": "^1.1.1"
+        "postcss-size": "^1.1.1",
+        "requirejs": "^2.2.0"
     }
 }

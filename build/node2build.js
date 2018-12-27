@@ -1,5 +1,6 @@
 var fs = require('fs')
 var cp = require('child_process')
+var path = require('path');
 var __config__ = require('./../dist/config')
 var fromdir = (process.argv.length >= 3
   ? process.argv[2]
@@ -124,7 +125,8 @@ node2build.on('exit', function (code, signal) {
 
   // 处理html
   var html = fs.readFileSync(todir + '/index.html', 'utf-8')
-  html = html.replace('\r\n<script src="config.js"></script>', '')
-  fs.writeFileSync(todir + '/index.html', html)
+  html = html.replace('<script src="config.js"></script>', '')
+  fs.writeFileSync(todir + '/index.html', html);
+
   console.log(`打包完成 (返回码 : ${code})`)
 })

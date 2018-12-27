@@ -20,7 +20,7 @@ var fs = require('fs'),
 
     sourcemaps = require('gulp-sourcemaps'),
     clean = require('gulp-clean'),
-    server = require('gulp-ss-server'),
+    express = require('express'),
     empty = require('gulp-empty'),
 
     processors = [
@@ -45,6 +45,8 @@ var fs = require('fs'),
         })
         //cssnano
     ];
+
+var server = new express();
 
 function sass2css(...files) {
     files.forEach(
@@ -91,10 +93,8 @@ module.exports = {
             .pipe(gulp.dest(path.join(__dirname, '../', 'dist')))
     },
     server() {
-        server.run({
-            port: 3000,
-            runtime: 'dist'
-        });
+        server.use(express.static(path.join(__dirname, '../dist')));
+        server.listen(3000, () => console.log('listening on port 3000!'));
     },
     clean() {
         return gulp.src(path.join(__dirname, '../', 'dist'))
