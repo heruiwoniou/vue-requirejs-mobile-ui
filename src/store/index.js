@@ -12,7 +12,7 @@
     return 'store/modules/base/' + module
   }))
 
-  define(storeModules, function (Vue, Vuex, transition, Evaluate, EvaluateClass) {
+  define(storeModules, function (Vue, Vuex, transition) {
     Vue.use(Vuex)
     var m = []
       .slice

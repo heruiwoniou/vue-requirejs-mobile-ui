@@ -6,7 +6,7 @@
                     <!--<textarea name="" id="textconsole" cols="30" rows="10"></textarea>-->
                     <form action="">
                         <div class="cs-contenter__loginPanel__logo">
-                            <img src="/assets/system/logo.png" alt="">
+                            <img :src="env.publicPath + 'assets/system/logo.png'" alt="">
                         </div>
                         <cs-field type="text" icon="fa fa-user" placeholder="Email or Phone" v-model="username"></cs-field>
                         <cs-field type="password" icon="fa fa-unlock-alt" placeholder="Password" v-model="password"></cs-field>

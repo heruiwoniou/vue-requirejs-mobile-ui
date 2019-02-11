@@ -3,6 +3,7 @@ require.config({
   // urlArgs: "bust=" + (new Date()).getTime(),
   baseUrl: '/',
   paths: {
+    'env-config': 'config/dev',
     'libs': 'libs',
     'vue': 'libs/vue/vue',
     'vuex': 'libs/vuex/vuex',

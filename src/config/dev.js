@@ -1,0 +1,4 @@
+define({
+  'env': 'development',
+  'publicPath': '/' 
+});

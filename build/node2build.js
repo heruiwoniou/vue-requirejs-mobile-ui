@@ -24,6 +24,7 @@ var base = {
   // false   } },
   optimizeCss: 'standard', // "standard",
   paths: {
+    'env-config': 'config/prod',
     'libs': 'libs',
     'vue': 'libs/vue/vue',
     'vuex': 'libs/vuex/vuex',
@@ -114,18 +115,18 @@ node2build.on('exit', function (code, signal) {
   var store = fs.readFileSync(todir + '/store/index.js', 'utf-8')
   store = store.replace(/(define\()(e,function)/, '$1"store/index",$2')
   entrance = entrance.replace(/(define\(["']application["'])/, router + store + '$1')
-  var config = fs.readFileSync(todir + '/config.js', 'utf-8')
+  var config = fs.readFileSync(todir + '/config/index.js', 'utf-8')
   entrance = config + entrance
   exec('rm -rf ' + todir + '/store')
   exec('rm -rf ' + todir + '/router')
   exec('rm -rf ' + todir + '/components')
   exec('rm ' + todir + '/build.txt')
-  exec('rm ' + todir + '/config.js')
+  exec('rm -rf' + todir + '/config')
   fs.writeFileSync(todir + '/entrance.js', entrance)
 
   // 处理html
   var html = fs.readFileSync(todir + '/index.html', 'utf-8')
-  html = html.replace('<script src="config.js"></script>', '')
+  html = html.replace('<script src="config/index.js"></script>', '')
   fs.writeFileSync(todir + '/index.html', html);
 
   console.log(`打包完成 (返回码 : ${code})`)
