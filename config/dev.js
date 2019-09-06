@@ -1,0 +1,1 @@
+define({env:"development",publicPath:"/"});

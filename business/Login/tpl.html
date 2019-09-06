@@ -1,0 +1,23 @@
+<transition :name="transitionName">
+    <cs-page class="cs-login" :class="{ 'top-layer':topLayer }">
+        <cs-contenter>
+            <div class="cs-contenter__loginPanel">
+                <div class="cs-contenter__loginPanel__container">
+                    <!--<textarea name="" id="textconsole" cols="30" rows="10"></textarea>-->
+                    <form action="">
+                        <div class="cs-contenter__loginPanel__logo">
+                            <img :src="env.publicPath + 'assets/system/logo.png'" alt="">
+                        </div>
+                        <cs-field type="text" icon="fa fa-user" placeholder="Email or Phone" v-model="username"></cs-field>
+                        <cs-field type="password" icon="fa fa-unlock-alt" placeholder="Password" v-model="password"></cs-field>
+                        <cs-button type="primary" size="large" @click.native="sign">Login</cs-button>
+                    </form>
+                </div>
+            </div>
+        </cs-contenter>
+        <cs-footer :height="190" transparent>
+            <a href="javascript:;" class="forget">Forgot account?</a>
+            <p>Copyright©2005-2016 Tenpay</p>
+        </cs-footer>
+    </cs-page>
+</transition>

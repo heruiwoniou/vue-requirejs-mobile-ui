@@ -1,0 +1,28 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="DateTimePicker">
+            <router-link to="/Main/JSComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container trl">
+                <h1><i class="fa fa-puzzle-piece"></i>DateTimePicker</h1>
+            </div>
+            <div class="section-container" style="position: absolute;top:45%; width:100%;box-sizing:border-box;transform: translate3d(0,-50%,0)">
+                <div class="cs-button-group">
+                    <cs-button size="large" type="primary" @click.native="picker1">点击弹出 DateTime Picker</cs-button>
+                    <cs-button size="large" type="primary" @click.native="picker2">点击弹出 Date Picker</cs-button>
+                    <cs-button size="large" type="primary" @click.native="picker3">点击弹出 Time Picker</cs-button>
+                    <cs-button size="large" type="primary" @click.native="picker4">自定义模板</cs-button>
+                    <cs-button size="large" type="primary" @click.native="picker5">设定初始值</cs-button>
+                </div>
+            </div>
+        </cs-contenter>
+        <cs-datetime-picker ref="picker1" type="datetime" v-model="pickerValue1"></cs-datetime-picker>
+        <cs-datetime-picker ref="picker2" type="date" v-model="pickerValue2"></cs-datetime-picker>
+        <cs-datetime-picker ref="picker3" type="time" v-model="pickerValue3"></cs-datetime-picker>
+        <cs-datetime-picker ref="picker4" type="date" v-model="pickerValue4" year-format="{value} 年" month-format="{value} 月" date-format="{value} 日"></cs-datetime-picker>
+        <cs-datetime-picker ref="picker5" type="time" v-model="pickerValue5"></cs-datetime-picker>
+    </cs-page>
+</transition>

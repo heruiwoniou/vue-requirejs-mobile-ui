@@ -1,0 +1,53 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Tab">
+            <router-link to="/Main/FormComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container trl">
+                <h1><i class="fa fa-puzzle-piece"></i>Tab</h1>
+            </div>
+            <cs-tab-container v-model="active" :swipeable="true" :tabbar="true">
+                <cs-tab-container-item id="tab-container1">
+                    <div class="cs-cell-group" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
+                        <cs-cell v-for="n in list" :title=" 'tab-container' + n"></cs-cell>
+                    </div>
+                    <div class="cs-cell-group" style="text-align: center;">
+                        <div style="display: inline-block">
+                            <cs-spinner :type="1"></cs-spinner>
+                        </div>
+                    </div>
+                </cs-tab-container-item>
+                <cs-tab-container-item id="tab-container2">
+                    <cs-loadmore :top-method="loadTop" ref="loadmoretop">
+                        <div class="cs-cell-group">
+                            <cs-cell v-for="n in rlist" :title="n.toString()"></cs-cell>
+                        </div>
+                    </cs-loadmore>
+                </cs-tab-container-item>
+                <cs-tab-container-item id="tab-container3">
+                    <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
+                        <div class="cs-cell-group">
+                            <cs-cell v-for="n in list" :title="'tab-container'+n.toString()"></cs-cell>
+                        </div>
+                    </cs-loadmore>
+                </cs-tab-container-item>
+            </cs-tab-container>
+        </cs-contenter>
+        <cs-footer>
+            <cs-tabbar v-model="active" :fixed="true">
+                <cs-tab-item id="tab-container1">
+                    <img slot="icon" src="http://placehold.it/100x100"> tab1
+                </cs-tab-item>
+                <cs-tab-item id="tab-container2">
+                    <img slot="icon" src="http://placehold.it/100x100"> tab2
+                </cs-tab-item>
+                <cs-tab-item id="tab-container3">
+                    <img slot="icon" src="http://placehold.it/100x100"> tab3
+                </cs-tab-item>
+            </cs-tabbar>
+        </cs-footer>
+    </cs-page>
+</transition>

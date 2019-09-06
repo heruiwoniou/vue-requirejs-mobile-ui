@@ -1,0 +1,21 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Toast">
+            <router-link to="/Main/JSComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <h1><i class="fa fa-puzzle-piece"></i>Toast</h1>
+            </div>
+            <div class="section-container" style="position: absolute;top:45%; width:100%;box-sizing:border-box;transform: translate3d(0,-50%,0)">
+                <div class="cs-button-group">
+                    <cs-button size="large" type="primary" @click.native="Toast1">点击弹出 Toast</cs-button>
+                    <cs-button size="large" type="primary" @click.native="Toast2">点击弹出带有 icon 的 Toast</cs-button>
+                    <cs-button size="large" type="primary" @click.native="Toast3">自定义 Toast 位置</cs-button>
+                </div>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

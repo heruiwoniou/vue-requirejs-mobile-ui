@@ -1,0 +1,41 @@
+<transition :name="transitionName">
+    <cs-page class="cs-parent" :class="{ 'top-layer':topLayer }">
+        <cs-header title="CSSComponents">
+            <router-link to="/Main" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <h1><i class="fa fa-cube"></i>CSSComponents</h1>
+            </div>
+            <div class="section-container">
+                <div class="cs-button-group">
+                    <cs-button size="large" type="default">default</cs-button>
+                    <cs-button size="large" type="primary">primary</cs-button>
+                    <cs-button size="large" type="danger">danger</cs-button>
+                </div>
+                <div class="cs-button-group">
+                    <cs-button size="normal" type="default">default</cs-button>
+                    <cs-button size="normal" type="primary">primary</cs-button>
+                    <cs-button size="normal" type="danger">danger</cs-button>
+                </div>
+                <div class="cs-button-group">
+                    <cs-button size="small" type="default" icon="fa fa-tv">default</cs-button>
+                    <cs-button size="small" type="primary">primary</cs-button>
+                    <cs-button size="small" type="danger">danger</cs-button>
+                </div>
+                <div class="cs-button-group">
+                    <cs-button size="normal" type="default" disabled plain>default</cs-button>
+                    <cs-button size="normal" type="primary" disabled plain>primary</cs-button>
+                    <cs-button size="normal" type="danger" disabled plain>danger</cs-button>
+                </div>
+                <div class="cs-button-group">
+                    <cs-button size="normal" type="default" plain>default</cs-button>
+                    <cs-button size="normal" type="primary" plain>primary</cs-button>
+                    <cs-button size="normal" type="danger" plain>danger</cs-button>
+                </div>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

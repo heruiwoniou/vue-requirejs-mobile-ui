@@ -1,0 +1,1 @@
+define([],function(){return function(t){return{data:function(){return{list:10,loadingBottom:!1}},methods:{loadBottom:function(){setTimeout(function(){this.list+=5,this.$refs.loadmorebottom.onBottomLoaded()}.bind(this),2e3)}}}}});

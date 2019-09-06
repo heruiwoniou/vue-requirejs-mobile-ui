@@ -1,0 +1,1 @@
+define([],function(){return function(n){return{data:function(){return{popupVisible:!1}},methods:{Popup:function(){this.popupVisible=!0}}}}});

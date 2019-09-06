@@ -1,0 +1,34 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="ActionSheet">
+            <router-link to="/Main/JSComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <h1><i class="fa fa-puzzle-piece"></i>ActionSheet</h1>
+            </div>
+            <div class="section-container" style="position: absolute;top:45%; width:100%;box-sizing:border-box;transform: translate3d(0,-50%,0)">
+                <div class="cs-button-group">
+                    <cs-button size="large" type="primary" @click.native="action1">点击上拉 action sheet</cs-button>
+                    <cs-button size="large" type="primary" @click.native="action2">不带取消按钮的 action sheet</cs-button>
+                </div>
+            </div>
+        </cs-contenter>
+        <cs-actionsheet :actions="[{
+                            name: '拍照',
+                            method: itemclick
+                        }, {
+                            name: '从相册中选取',
+                            method: itemclick
+                        }]" v-model="sheet1.sheetVisible"></cs-actionsheet>
+        <cs-actionsheet :actions="[{
+                            name: '确定',
+                            method: itemclick
+                        }, {
+                            name: '返回上一步',
+                            method: itemclick
+                        }]" v-model="sheet2.sheetVisible" cancelText=""></cs-actionsheet>
+    </cs-page>
+</transition>

@@ -1,0 +1,1 @@
+define([],function(){return function(n){return{methods:{alert:function(){this.$messagebox.alert("操作成功")},confirm:function(){this.$messagebox.confirm("确定执行此操作?")},prompt:function(){this.$messagebox.prompt("请输入姓名")}}}}});

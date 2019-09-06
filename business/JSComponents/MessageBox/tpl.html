@@ -1,0 +1,21 @@
+<transition :name="transitionName">
+    <cs-page class="cs-admin" :class="{ 'top-layer':topLayer }">
+        <cs-header title="MessageBox">
+            <router-link to="/Main/JSComponents" slot="left">
+                <cs-button icon="fa fa-chevron-left">Back</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <h1><i class="fa fa-puzzle-piece"></i>MessageBox</h1>
+            </div>
+            <div class="section-container" style="position: absolute;top:45%; width:100%;box-sizing:border-box;transform: translate3d(0,-50%,0)">
+                <div class="cs-button-group">
+                    <cs-button size="large" type="primary" @click.native="alert">alert</cs-button>
+                    <cs-button size="large" type="primary" @click.native="confirm">confirm</cs-button>
+                    <cs-button size="large" type="primary" @click.native="prompt">prompt</cs-button>
+                </div>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

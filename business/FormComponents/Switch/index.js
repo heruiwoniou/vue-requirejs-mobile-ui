@@ -1,0 +1,1 @@
+define([],function(){return function(n){return{data:function(){return{switchValue:!1}},methods:{changeHandle:function(){}}}}});

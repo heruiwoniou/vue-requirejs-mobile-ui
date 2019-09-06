@@ -1,0 +1,32 @@
+<transition :name="transitionName">
+    <cs-page class="cs-main" :class="{ 'top-layer':topLayer }">
+        <cs-header title="Components Classify">
+            <cs-button icon="fa fa-search" slot="left"></cs-button>
+            <router-link to="/" slot="right">
+                <cs-button icon="fa fa-sign-out"></cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <h1><i class="fa fa-cubes"></i>Components Classify</h1>
+            </div>
+            <div class="section-container content">
+                <div class="user-panel">
+                    <router-link to="/Main/JSComponents" class="user-panel__admin">
+                        <span>JSComponents</span>
+                    </router-link>
+                </div>
+                <div class="user-panel">
+                    <router-link to="/Main/CSSComponents" class="user-panel__teacher">
+                        <span>CSSComponents</span>
+                    </router-link>
+                </div>
+                <div class="user-panel">
+                    <router-link to="/Main/FormComponents" class="user-panel__parent">
+                        <span>FormComponents</span>
+                    </router-link>
+                </div>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

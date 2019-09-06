@@ -1,0 +1,1 @@
+define([],function(){return function(e){return{data:function(){return{sheet1:{sheetVisible:!1},sheet2:{sheetVisible:!1}}},methods:{itemclick:function(){console.log("itemclick")},action1:function(){this.sheet1.sheetVisible=!0},action2:function(){this.sheet2.sheetVisible=!0}}}}});
