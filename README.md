@@ -7,6 +7,10 @@
   </a>
 </p>
 
+### Demos address
+
+[Address](https://heruiwoniou.github.io/vue-requirejs-mobile-ui/)
+
 ### setup
 ```
 npm install
