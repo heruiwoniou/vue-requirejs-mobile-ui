@@ -1,7 +1,7 @@
 ;
 require.config({
   // urlArgs: "bust=" + (new Date()).getTime(),
-  baseUrl: '/',
+  baseUrl: './',
   paths: {
     'env-config': 'config/dev',
     'libs': 'libs',
